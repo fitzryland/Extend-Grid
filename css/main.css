@@ -1,0 +1,31 @@
+@media only screen and (max-width: 600px) {
+  .mobile-cols-1, section {
+    width: 50%; } }
+@media only screen and (max-width: 600px) {
+  .mobile-cols-2 {
+    width: 100%; } }
+/*
+list width, cols, widths
+Loop through widths
+for each width -> build classes by width-slug + colNumber
+	-> width: col + colNumber
+
+
+
+
+
+ */
+.mediaObj:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+* {
+  box-sizing: border-box; }
+
+img {
+  padding: 0 !important; }
+
+section {
+  background-color: red;
+  height: 500px; }

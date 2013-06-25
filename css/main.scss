@@ -19,8 +19,19 @@
 //      :MM;  8M   MM    MM       MM  8M   MM  MM.   ,M9 MM YM.    , L.   I8
 //       VF   `Moo9^Yo..JMML.   .JMML.`Moo9^Yo.P^YbmdP'.JMML.`Mbmmd' M9mmmP'
 
+$mobile-width: 100%;
+$mobile-break: 600px;
+$tablet-width: 600px;
+$tablet-break: 1000px;
+$desktop-width: 960px;
 
+$mobile-cols: 2;
+$tablet-cols: 4;
+$desktop-cols: 6;
 
+$mobile-col-w: $mobile-width / $mobile-cols;
+$talet-col-w: $tablet-width / $tablet-cols;
+$desktop-col-w: $desktop-width / $desktop-cols;
 
 //                   ,,               ,,             gp
 // `7MMM.     ,MMF'  db               db             \/
@@ -37,9 +48,6 @@
 		clear: both;
 	}
 }
-
-
-
 //                                                        ,,
 // `7MM"""YMM               mm                          `7MM
 //   MM    `7               MM                            MM
@@ -49,7 +57,37 @@
 //   MM     ,M   ,V' VA.    MM  YM.    ,  MM    MM `Mb    MM
 // .JMMmmmmMMM .AM.   .MA.  `Mbmo`Mbmmd'.JMML  JMML.`Wbmd"MML.
 
+$mobile-slug: mobile-cols;
+@for $i from 1 through $mobile-cols {
+	@media only screen and (max-width: $mobile-break) {
+		.#{$mobile-slug}-#{$i} {
+			width: $i * $mobile-col-w;
+		}
+	}
+}
 
+.mobile-oneCol {
+	@media only screen and (max-width: $mobile-break) {
+		//@extend .mobile-cols-1;
+	}
+}
+.mobile-twoCol {
+	@media only screen and (max-width: $mobile-break) {
+	//	width: $mobile-col-w * 2;
+	}
+}
+
+/*
+list width, cols, widths
+Loop through widths
+for each width -> build classes by width-slug + colNumber
+	-> width: col + colNumber
+
+
+
+
+
+ */
 
 //              ,,        ,,
 //   .g8""8q.  *MM        db                    mm
@@ -86,7 +124,11 @@ img {
 	padding: 0 !important; // with box-sizing: border-box images should never have padding
 }
 
-
+section {
+	@extend .mobile-cols-1;
+	background-color: red;
+	height: 500px;
+}
 
 
 // `7MM"""Mq.
