@@ -44,41 +44,47 @@
 //   MM     ,M   ,V' VA.    MM  YM.    ,  MM    MM `Mb    MM
 // .JMMmmmmMMM .AM.   .MA.  `Mbmo`Mbmmd'.JMML  JMML.`Wbmd"MML.
 
-$mobile-width: 100%;
-$mobile-break: 600px;
-$tablet-width: 600px;
-$tablet-break: 1000px;
-$desktop-width: 960px;
+// (name, min-width, max-width, width, gutter, columns)
 
-$mobile-cols: 2;
-$tablet-cols: 4;
-$desktop-cols: 6;
+$layouts:
+	(mobile, 0px, 600px, 100%, 4%, 2)
+	(tablet, 601px, 959px, 600px, 5px, 4)
+	(desktop, 960px, 99999px, 960px, 10px, 6);
 
-$mobile-col-w: $mobile-width / $mobile-cols;
-$talet-col-w: $tablet-width / $tablet-cols;
-$desktop-col-w: $desktop-width / $desktop-cols;
-
-
-$mobile-slug: mobile-cols;
-@for $i from 1 through $mobile-cols {
-	@media only screen and (max-width: $mobile-break) {
-		.#{$mobile-slug}-#{$i} {
-			width: $i * $mobile-col-w;
+@each $layout in $layouts {
+	$layout-name: nth($layout, 1);
+	$min-width: nth($layout, 2);
+	$max-width: nth($layout, 3);
+	$width: nth($layout, 4);
+	$gutter: nth($layout, 5);
+	$columns: nth($layout, 6);
+	@media all and (max-width: $max-width) and (min-width: $min-width) {
+		@for $ii from 1 through $columns {
+			.#{$layout-name}-cols-#{$ii} {
+				width: $ii * ($width / $columns);
+			}
+		}
+		.#{$layout-name}-wrap {
+			width: $width;
 		}
 	}
 }
 
-.mobile-oneCol {
-	@media only screen and (max-width: $mobile-break) {
-		//@extend .mobile-cols-1;
-	}
+section {
+	@extend .mobile-wrap;
+	@extend .tablet-wrap;
+	@extend .desktop-wrap;
+	margin: 0 auto;
 }
-.mobile-twoCol {
-	@media only screen and (max-width: $mobile-break) {
-	//	width: $mobile-col-w * 2;
-	}
+.block {
+	@extend .mobile-cols-1;
+	@extend .tablet-cols-1;
+	@extend .desktop-cols-1;
+	border: 1px solid black;
+	background-color: red;
+	float: left;
+	height: 500px;
 }
-
 /*
 list width, cols, widths
 Loop through widths
@@ -124,12 +130,6 @@ for each width -> build classes by width-slug + colNumber
 }
 img {
 	padding: 0 !important; // with box-sizing: border-box images should never have padding
-}
-
-section {
-	@extend .mobile-cols-1;
-	background-color: red;
-	height: 500px;
 }
 
 
