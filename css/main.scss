@@ -10,6 +10,23 @@
 //                        .JMML.
 
 
+//                                   ,,
+//  .M"""bgd           mm     mm     db
+// ,MI    "Y           MM     MM
+// `MMb.      .gP"Ya mmMMmm mmMMmm `7MM  `7MMpMMMb.  .P"Ybmmm ,pP"Ybd
+//   `YMMNq. ,M'   Yb  MM     MM     MM    MM    MM :MI  I8   8I   `"
+// .     `MM 8M""""""  MM     MM     MM    MM    MM  WmmmP"   `YMMMa.
+// Mb     dM YM.    ,  MM     MM     MM    MM    MM 8M        L.   I8
+// P"Ybmmd"   `Mbmmd'  `Mbmo  `Mbmo.JMML..JMML  JMML.YMMMMMb  M9mmmP'
+//                                                  6'     dP
+//                                                  Ybmmmd'
+
+// (name, breakpoint-min-width, breakpoint-max-width, max-width, gutter, columns)
+$layouts:
+	(mobile, 0px, 600px, 400px, 4%, 2)
+	(tablet, 601px, 959px, 800px, 3%, 3)
+	(desktop, 960px, 99999px, 1200px, 2%, 4);
+
 //                                ,,           ,,        ,,
 // `7MMF'   `7MF'                 db          *MM      `7MM
 //   `MA     ,V                                MM        MM
@@ -18,7 +35,11 @@
 //     `MM A'  ,pm9MM    MM       MM   ,pm9MM  MM     M8 MM 8M"""""" `YMMMa.
 //      :MM;  8M   MM    MM       MM  8M   MM  MM.   ,M9 MM YM.    , L.   I8
 //       VF   `Moo9^Yo..JMML.   .JMML.`Moo9^Yo.P^YbmdP'.JMML.`Mbmmd' M9mmmP'
+$shadow:hsla(0%, 0%, 10%, 0.5);
 
+$darkPurple: #655795;
+$purple: #9f90ff;
+$lightPurple: #d3cbff;
 
 //                   ,,               ,,             gp
 // `7MMM.     ,MMF'  db               db             \/
@@ -35,6 +56,16 @@
 		clear: both;
 	}
 }
+@mixin roundAll($radius: 0.5em) {
+	-webkit-border-radius:$radius;
+	-moz-border-radius:$radius;
+	border-radius:$radius;
+}
+@mixin rounded($side1, $side2, $radius: 0.5em) {
+  border-#{$side1}-#{$side2}-radius: $radius;
+  -moz-border-radius-#{$side1}-#{$side2}: $radius;
+  -webkit-border-#{$side1}-#{$side2}-radius: $radius;
+}
 //                                                        ,,
 // `7MM"""YMM               mm                          `7MM
 //   MM    `7               MM                            MM
@@ -43,13 +74,10 @@
 //   MM   Y  ,     XMX      MM  8M""""""  MM    MM 8MI    MM
 //   MM     ,M   ,V' VA.    MM  YM.    ,  MM    MM `Mb    MM
 // .JMMmmmmMMM .AM.   .MA.  `Mbmo`Mbmmd'.JMML  JMML.`Wbmd"MML.
-
-// (name, breakpoint-min-width, breakpoint-max-width, max-width, gutter, columns)
-
-$layouts:
-	(mobile, 0px, 600px, 400px, 4%, 2)
-	(tablet, 601px, 959px, 800px, 3%, 3)
-	(desktop, 960px, 99999px, 1200px, 2%, 4);
+.shadow {
+	-webkit-box-shadow: 0px 0px 10px $shadow;
+	box-shadow: 0px 0px 10px $shadow;
+}
 
 @each $layout in $layouts {
 	$layout-name: nth($layout, 1);
@@ -73,38 +101,6 @@ $layouts:
 		}
 	}
 }
-
-section {
-	@extend %mobile-wrap, %tablet-wrap, %desktop-wrap;
-	background-color: pink;
-	height: 1000px;
-	margin: 0 auto;
-	> div {
-		border: 1px solid black;
-		background-color: red;
-		float: left;
-		height: 100px;
-	}
-}
-.block1 {
-	@extend %mobile-cols-1, %tablet-cols-1, %desktop-cols-1;
-}
-.block2 {
-	@extend %mobile-cols-1, %tablet-cols-1, %desktop-cols-2, %mobile-rowend;
-}
-.block3 {
-	@extend %mobile-cols-2, %tablet-cols-1, %desktop-cols-1, %tablet-rowend, %desktop-rowend;
-}
-.block4 {
-	@extend %mobile-cols-1, %tablet-cols-2, %desktop-cols-3;
-}
-.block5 {
-	@extend %mobile-cols-1, %tablet-cols-1, %desktop-cols-1, %mobile-rowend, %tablet-rowend, %desktop-rowend;
-}
-.block6 {
-	@extend %mobile-cols-2, %tablet-cols-3, %desktop-cols-4, %tablet-rowend, %desktop-rowend;
-}
-
 //              ,,        ,,
 //   .g8""8q.  *MM        db                    mm
 // .dP'    `YM. MM                              MM
@@ -139,7 +135,42 @@ section {
 img {
 	padding: 0 !important; // with box-sizing: border-box images should never have padding
 }
+html {
+	background-color: $darkPurple;
+}
 
+section {
+	@extend %mobile-wrap, %tablet-wrap, %desktop-wrap;
+	background-color: $purple;
+	height: 1000px;
+	margin: 0 auto;
+	> div {
+		@extend .shadow;
+		border: 1px solid $darkPurple;
+		background-color: $lightPurple;
+		float: left;
+		height: 100px;
+		@include roundAll(1em);
+	}
+}
+.block1 {
+	@extend %mobile-cols-1, %tablet-cols-1, %desktop-cols-1;
+}
+.block2 {
+	@extend %mobile-cols-1, %tablet-cols-1, %desktop-cols-2, %mobile-rowend;
+}
+.block3 {
+	@extend %mobile-cols-2, %tablet-cols-1, %desktop-cols-1, %tablet-rowend, %desktop-rowend;
+}
+.block4 {
+	@extend %mobile-cols-1, %tablet-cols-2, %desktop-cols-3;
+}
+.block5 {
+	@extend %mobile-cols-1, %tablet-cols-1, %desktop-cols-1, %mobile-rowend, %tablet-rowend, %desktop-rowend;
+}
+.block6 {
+	@extend %mobile-cols-2, %tablet-cols-3, %desktop-cols-4, %tablet-rowend, %desktop-rowend;
+}
 
 // `7MM"""Mq.
 //   MM   `MM.
