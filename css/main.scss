@@ -44,42 +44,60 @@
 //   MM     ,M   ,V' VA.    MM  YM.    ,  MM    MM `Mb    MM
 // .JMMmmmmMMM .AM.   .MA.  `Mbmo`Mbmmd'.JMML  JMML.`Wbmd"MML.
 
-// (name, min-width, max-width, width, gutter, columns)
+// (name, breakpoint-min-width, breakpoint-max-width, max-width, gutter, columns)
 
 $layouts:
-	(mobile, 0px, 600px, 100%, 4%, 2)
-	(tablet, 601px, 959px, 600px, 5px, 4)
-	(desktop, 960px, 99999px, 960px, 10px, 6);
+	(mobile, 0px, 600px, 400px, 2)
+	(tablet, 601px, 959px, 800px, 3)
+	(desktop, 960px, 99999px, 1200px, 4);
 
 @each $layout in $layouts {
 	$layout-name: nth($layout, 1);
 	$min-width: nth($layout, 2);
 	$max-width: nth($layout, 3);
 	$width: nth($layout, 4);
-	$gutter: nth($layout, 5);
-	$columns: nth($layout, 6);
+	$columns: nth($layout, 5);
 	@media all and (max-width: $max-width) and (min-width: $min-width) {
 		@for $ii from 1 through $columns {
 			%#{$layout-name}-cols-#{$ii} {
-				width: $ii * ($width / $columns);
+				width: $ii * (100% / $columns);
 			}
 		}
 		%#{$layout-name}-wrap {
-			width: $width;
+			max-width: $width;
 		}
 	}
 }
 
 section {
 	@extend %mobile-wrap, %tablet-wrap, %desktop-wrap;
+	background-color: pink;
+	height: 1000px;
 	margin: 0 auto;
+	> * {
+		border: 1px solid black;
+		background-color: red;
+		float: left;
+		height: 500px;
+	}
 }
-.block {
+.block1 {
 	@extend %mobile-cols-1, %tablet-cols-1, %desktop-cols-1;
-	border: 1px solid black;
-	background-color: red;
-	float: left;
-	height: 500px;
+}
+.block2 {
+	@extend %mobile-cols-1, %tablet-cols-1, %desktop-cols-2;
+}
+.block3 {
+	@extend %mobile-cols-2, %tablet-cols-1, %desktop-cols-1;
+}
+.block4 {
+	@extend %mobile-cols-1, %tablet-cols-2, %desktop-cols-3;
+}
+.block5 {
+	@extend %mobile-cols-1, %tablet-cols-1, %desktop-cols-1;
+}
+.block6 {
+	@extend %mobile-cols-2, %tablet-cols-3, %desktop-cols-4;
 }
 /*
 list width, cols, widths
