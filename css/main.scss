@@ -149,27 +149,33 @@ section {
 		border: 1px solid $darkPurple;
 		background-color: $lightPurple;
 		float: left;
-		height: 100px;
+		min-height: 100px;
+		padding: 1em;
 		@include roundAll(1em);
 	}
 }
 .block1 {
 	@extend %mobile-cols-1, %tablet-cols-1, %desktop-cols-1;
+	height: calc(200px + 2%);
+	h1 {
+		margin: 0;
+	}
 }
 .block2 {
 	@extend %mobile-cols-1, %tablet-cols-1, %desktop-cols-2, %mobile-rowend;
 }
 .block3 {
-	@extend %mobile-cols-2, %tablet-cols-1, %desktop-cols-1, %tablet-rowend, %desktop-rowend;
-}
-.block4 {
-	@extend %mobile-cols-1, %tablet-cols-2, %desktop-cols-3;
-}
-.block5 {
 	@extend %mobile-cols-1, %tablet-cols-1, %desktop-cols-1, %mobile-rowend, %tablet-rowend, %desktop-rowend;
 }
+.block4 {
+	@extend %mobile-cols-1, %tablet-cols-2, %desktop-cols-3, %tablet-rowend, %desktop-rowend;
+	height: calc(200px + 2%);
+}
+.block5 {
+	@extend %mobile-cols-1, %tablet-cols-2, %desktop-cols-3, %mobile-rowend;
+}
 .block6 {
-	@extend %mobile-cols-2, %tablet-cols-3, %desktop-cols-4, %tablet-rowend, %desktop-rowend;
+	@extend %mobile-cols-2, %tablet-cols-1, %desktop-cols-1, %tablet-rowend, %desktop-rowend;
 }
 
 // `7MM"""Mq.
