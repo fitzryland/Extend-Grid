@@ -56,16 +56,6 @@ $lightPurple: #d3cbff;
 		clear: both;
 	}
 }
-@mixin roundAll($radius: 0.5em) {
-	-webkit-border-radius:$radius;
-	-moz-border-radius:$radius;
-	border-radius:$radius;
-}
-@mixin rounded($side1, $side2, $radius: 0.5em) {
-  border-#{$side1}-#{$side2}-radius: $radius;
-  -moz-border-radius-#{$side1}-#{$side2}: $radius;
-  -webkit-border-#{$side1}-#{$side2}-radius: $radius;
-}
 //                                                        ,,
 // `7MM"""YMM               mm                          `7MM
 //   MM    `7               MM                            MM
@@ -74,11 +64,6 @@ $lightPurple: #d3cbff;
 //   MM   Y  ,     XMX      MM  8M""""""  MM    MM 8MI    MM
 //   MM     ,M   ,V' VA.    MM  YM.    ,  MM    MM `Mb    MM
 // .JMMmmmmMMM .AM.   .MA.  `Mbmo`Mbmmd'.JMML  JMML.`Wbmd"MML.
-.shadow {
-	-webkit-box-shadow: 0px 0px 10px $shadow;
-	box-shadow: 0px 0px 10px $shadow;
-}
-
 @each $layout in $layouts {
 	$layout-name: nth($layout, 1);
 	$min-width: nth($layout, 2);
@@ -101,26 +86,6 @@ $lightPurple: #d3cbff;
 		}
 	}
 }
-//              ,,        ,,
-//   .g8""8q.  *MM        db                    mm
-// .dP'    `YM. MM                              MM
-// dM'      `MM MM,dMMb.`7MM  .gP"Ya   ,p6"bo mmMMmm ,pP"Ybd
-// MM        MM MM    `Mb MM ,M'   Yb 6M'  OO   MM   8I   `"
-// MM.      ,MP MM     M8 MM 8M"""""" 8M        MM   `YMMMa.
-// `Mb.    ,dP' MM.   ,M9 MM YM.    , YM.    ,  MM   L.   I8
-//   `"bmmd"'   P^YbmdP'  MM  `Mbmmd'  YMbmd'   `MbmoM9mmmP'
-//                     QO MP
-//                     `bmP
-.mediaObj {
-	@include group();
-}
-.media {
-
-}
-.mediaDesc {
-
-}
-
 //            ,,                                          ,,        ,,
 //  .M"""bgd  db   mm               `7MMF'     A     `7MF'db      `7MM
 // ,MI    "Y       MM                 `MA     ,MA     ,V            MM
@@ -132,50 +97,57 @@ $lightPurple: #d3cbff;
 * {
 	box-sizing: border-box;
 }
-img {
-	padding: 0 !important; // with box-sizing: border-box images should never have padding
-}
 html {
 	background-color: $darkPurple;
 }
 
 section {
-	@extend %mobile-wrap, %tablet-wrap, %desktop-wrap;
+	@extend %mobile-wrap;
+	@extend %tablet-wrap;
+	@extend %desktop-wrap;
 	background-color: $purple;
 	height: 1000px;
 	margin: 0 auto;
 	> div {
-		@extend .shadow;
 		border: 1px solid $darkPurple;
 		background-color: $lightPurple;
 		float: left;
 		min-height: 100px;
 		padding: 1em;
-		@include roundAll(1em);
 	}
 }
 .block1 {
-	@extend %mobile-cols-1, %tablet-cols-1, %desktop-cols-1;
-	height: calc(200px + 2%);
+	@extend %mobile-cols-1;
+	@extend %tablet-cols-1;
+	@extend %desktop-cols-1;
 	h1 {
 		margin: 0;
 	}
 }
 .block2 {
-	@extend %mobile-cols-1, %tablet-cols-1, %desktop-cols-2, %mobile-rowend;
+	@extend %mobile-cols-1, %mobile-rowend;
+	@extend %tablet-cols-1;
+	@extend %desktop-cols-2;
 }
 .block3 {
-	@extend %mobile-cols-1, %tablet-cols-1, %desktop-cols-1, %mobile-rowend, %tablet-rowend, %desktop-rowend;
+	@extend %mobile-cols-2, %mobile-rowend;
+	@extend %tablet-cols-1, %tablet-rowend;
+	@extend %desktop-cols-1, %desktop-rowend;
 }
 .block4 {
-	@extend %mobile-cols-1, %tablet-cols-2, %desktop-cols-3, %tablet-rowend, %desktop-rowend;
-	height: calc(200px + 2%);
+	@extend %mobile-cols-1;
+	@extend %tablet-cols-3, %tablet-rowend;
+	@extend %desktop-cols-3, %desktop-rowend;
 }
 .block5 {
-	@extend %mobile-cols-1, %tablet-cols-2, %desktop-cols-3, %mobile-rowend;
+	@extend %mobile-cols-1, %mobile-rowend;
+	@extend %tablet-cols-2;
+	@extend %desktop-cols-3;
 }
 .block6 {
-	@extend %mobile-cols-2, %tablet-cols-1, %desktop-cols-1, %tablet-rowend, %desktop-rowend;
+	@extend %mobile-cols-2;
+	@extend %tablet-cols-1, %tablet-rowend;
+	@extend %desktop-cols-1, %desktop-rowend;
 }
 
 // `7MM"""Mq.

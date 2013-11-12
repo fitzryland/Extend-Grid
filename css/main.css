@@ -1,13 +1,9 @@
-.shadow, section > div {
-  -webkit-box-shadow: 0px 0px 10px rgba(26, 26, 26, 0.5);
-  box-shadow: 0px 0px 10px rgba(26, 26, 26, 0.5); }
-
 @media all and (max-width: 600px) and (min-width: 0px) {
-  .block1, .block2, .block3, .block4, .block5 {
+  .block1, .block2, .block4, .block5 {
     width: 48%;
     margin: 4% 4% 0 0; }
 
-  .block6 {
+  .block3, .block6 {
     width: 100%;
     margin: 4% 4% 0 0; }
 
@@ -21,8 +17,12 @@
     width: 31.33333%;
     margin: 3% 3% 0 0; }
 
-  .block4, .block5 {
+  .block5 {
     width: 65.66667%;
+    margin: 3% 3% 0 0; }
+
+  .block4 {
+    width: 100%;
     margin: 3% 3% 0 0; }
 
   section {
@@ -48,16 +48,8 @@
 
   .block3, .block4, .block6 {
     margin-right: 0; } }
-.mediaObj:after {
-  content: "";
-  display: table;
-  clear: both; }
-
 * {
   box-sizing: border-box; }
-
-img {
-  padding: 0 !important; }
 
 html {
   background-color: #655795; }
@@ -71,15 +63,7 @@ section {
     background-color: #d3cbff;
     float: left;
     min-height: 100px;
-    padding: 1em;
-    -webkit-border-radius: 1em;
-    -moz-border-radius: 1em;
-    border-radius: 1em; }
+    padding: 1em; }
 
-.block1 {
-  height: calc(200px + 2%); }
-  .block1 h1 {
-    margin: 0; }
-
-.block4 {
-  height: calc(200px + 2%); }
+.block1 h1 {
+  margin: 0; }
