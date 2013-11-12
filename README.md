@@ -7,4 +7,5 @@ The main idea is to define layouts in a multidimentional Sass list and build a m
 
 ### TODO
 
-Nested grids are up next.
+* Nested grids are up next.
+* fancier, more fine tuned media queries
