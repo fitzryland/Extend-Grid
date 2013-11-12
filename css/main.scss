@@ -21,11 +21,7 @@
 //                                                  6'     dP
 //                                                  Ybmmmd'
 
-// (name, breakpoint-min-width, breakpoint-max-width, max-width, gutter, columns)
-$layouts:
-	(mobile, 0px, 600px, 400px, 4%, 2)
-	(tablet, 601px, 959px, 800px, 3%, 3)
-	(desktop, 960px, 99999px, 1200px, 2%, 4);
+
 
 //                                ,,           ,,        ,,
 // `7MMF'   `7MF'                 db          *MM      `7MM
@@ -35,7 +31,6 @@ $layouts:
 //     `MM A'  ,pm9MM    MM       MM   ,pm9MM  MM     M8 MM 8M"""""" `YMMMa.
 //      :MM;  8M   MM    MM       MM  8M   MM  MM.   ,M9 MM YM.    , L.   I8
 //       VF   `Moo9^Yo..JMML.   .JMML.`Moo9^Yo.P^YbmdP'.JMML.`Mbmmd' M9mmmP'
-$shadow:hsla(0%, 0%, 10%, 0.5);
 
 $darkPurple: #655795;
 $purple: #9f90ff;
@@ -64,6 +59,23 @@ $lightPurple: #d3cbff;
 //   MM   Y  ,     XMX      MM  8M""""""  MM    MM 8MI    MM
 //   MM     ,M   ,V' VA.    MM  YM.    ,  MM    MM `Mb    MM
 // .JMMmmmmMMM .AM.   .MA.  `Mbmo`Mbmmd'.JMML  JMML.`Wbmd"MML.
+
+// (name, breakpoint-min-width, breakpoint-max-width, max-width, gutter, columns)
+$layouts:
+	(small, 0px, 600px, 100%, 4%, 2)
+	(medium, 601px, 959px, 800px, 3%, 3)
+	(large, 960px, 99999px, 1200px, 2%, 4);
+
+// add a media query for each layout
+@mixin break($media) {
+	@each $layout in $layouts {
+		@if nth($layout, 1) == $media {
+			@media only screen and (min-width: nth($layout, 2)) and (max-width: nth($layout, 3)) { @content; }
+		}
+	}
+}
+
+// Extendable Flexible Grid
 @each $layout in $layouts {
 	$layout-name: nth($layout, 1);
 	$min-width: nth($layout, 2);
@@ -75,7 +87,7 @@ $lightPurple: #d3cbff;
 		@for $ii from 1 through $columns {
 			%#{$layout-name}-cols-#{$ii} {
 				width: ($ii * ((100% + $gutter) / $columns)) - $gutter;
-				margin: $gutter $gutter 0 0;
+				margin-right: $gutter;
 			}
 		}
 		%#{$layout-name}-wrap {
@@ -102,9 +114,9 @@ html {
 }
 
 section {
-	@extend %mobile-wrap;
-	@extend %tablet-wrap;
-	@extend %desktop-wrap;
+	@extend %small-wrap;
+	@extend %medium-wrap;
+	@extend %large-wrap;
 	background-color: $purple;
 	height: 1000px;
 	margin: 0 auto;
@@ -117,37 +129,46 @@ section {
 	}
 }
 .block1 {
-	@extend %mobile-cols-1;
-	@extend %tablet-cols-1;
-	@extend %desktop-cols-1;
+	@extend %small-cols-1;
+	@extend %medium-cols-1;
+	@extend %large-cols-1;
 	h1 {
 		margin: 0;
 	}
+	@include break(small) {
+		background-color: red;
+	}
+	@include break(medium) {
+		background-color: orange;
+	}
+	@include break(large) {
+		background-color: yellow;
+	}
 }
 .block2 {
-	@extend %mobile-cols-1, %mobile-rowend;
-	@extend %tablet-cols-1;
-	@extend %desktop-cols-2;
+	@extend %small-cols-1, %small-rowend;
+	@extend %medium-cols-1;
+	@extend %large-cols-2;
 }
 .block3 {
-	@extend %mobile-cols-2, %mobile-rowend;
-	@extend %tablet-cols-1, %tablet-rowend;
-	@extend %desktop-cols-1, %desktop-rowend;
+	@extend %small-cols-2, %small-rowend;
+	@extend %medium-cols-1, %medium-rowend;
+	@extend %large-cols-1, %large-rowend;
 }
 .block4 {
-	@extend %mobile-cols-1;
-	@extend %tablet-cols-3, %tablet-rowend;
-	@extend %desktop-cols-3, %desktop-rowend;
+	@extend %small-cols-1;
+	@extend %medium-cols-3, %medium-rowend;
+	@extend %large-cols-3, %large-rowend;
 }
 .block5 {
-	@extend %mobile-cols-1, %mobile-rowend;
-	@extend %tablet-cols-2;
-	@extend %desktop-cols-3;
+	@extend %small-cols-1, %small-rowend;
+	@extend %medium-cols-2;
+	@extend %large-cols-3;
 }
 .block6 {
-	@extend %mobile-cols-2;
-	@extend %tablet-cols-1, %tablet-rowend;
-	@extend %desktop-cols-1, %desktop-rowend;
+	@extend %small-cols-2;
+	@extend %medium-cols-1, %medium-rowend;
+	@extend %large-cols-1, %large-rowend;
 }
 
 // `7MM"""Mq.
