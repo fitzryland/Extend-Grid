@@ -1,5 +1,5 @@
 @media all and (max-width: 600px) and (min-width: 0px) {
-  .block1, .block2, .block4, .block5 {
+  .block1, .block2, .block4, .block5, .block7 {
     width: 48%;
     margin-right: 4%; }
 
@@ -13,40 +13,43 @@
   .block2, .block3, .block5 {
     margin-right: 0; } }
 @media all and (max-width: 959px) and (min-width: 601px) {
-  .block1, .block2, .block3, .block6 {
-    width: 31.33333%;
+  .block1, .block2, .block5 {
+    width: 22.75%;
     margin-right: 3%; }
 
-  .block5 {
-    width: 65.66667%;
+  .block3, .block6, .block7 {
+    width: 48.5%;
     margin-right: 3%; }
 
   .block4 {
-    width: 100%;
+    width: 74.25%;
     margin-right: 3%; }
 
   section {
-    max-width: 800px; }
+    max-width: 100%; }
 
-  .block3, .block4, .block6 {
+  .block4, .block6 {
+    clear: both; }
+
+  .block3, .block5, .block7 {
     margin-right: 0; } }
 @media all and (max-width: 99999px) and (min-width: 960px) {
-  .block1, .block3, .block6 {
-    width: 23.5%;
+  .block3, .block4, .block6 {
+    width: 15%;
     margin-right: 2%; }
 
-  .block2 {
+  .block1, .block2, .block7 {
+    width: 32%;
+    margin-right: 2%; }
+
+  .block5 {
     width: 49%;
-    margin-right: 2%; }
-
-  .block4, .block5 {
-    width: 74.5%;
     margin-right: 2%; }
 
   section {
     max-width: 1200px; }
 
-  .block3, .block4, .block6 {
+  .block4, .block7 {
     margin-right: 0; } }
 * {
   box-sizing: border-box; }
@@ -58,21 +61,27 @@ section {
   background-color: #9f90ff;
   height: 1000px;
   margin: 0 auto; }
-  section > div {
-    border: 1px solid #655795;
-    background-color: #d3cbff;
-    float: left;
-    min-height: 100px;
-    padding: 1em; }
+
+.block1, .block2, .block3, .block4, .block5, .block6, .block7 {
+  border: 1px solid #655795;
+  background-color: #d3cbff;
+  float: left;
+  min-height: 100px;
+  margin-top: 1em;
+  padding: 1em; }
 
 .block1 h1 {
   margin: 0; }
-@media only screen and (min-width: 0px) and (max-width: 600px) {
+@media all and (min-width: 0px) and (max-width: 600px) {
   .block1 {
     background-color: red; } }
-@media only screen and (min-width: 601px) and (max-width: 959px) {
+@media all and (min-width: 601px) and (max-width: 959px) {
   .block1 {
     background-color: orange; } }
-@media only screen and (min-width: 960px) and (max-width: 99999px) {
+@media all and (min-width: 960px) and (max-width: 99999px) {
   .block1 {
     background-color: yellow; } }
+
+@media all and (min-width: 601px) and (max-width: 959px) {
+  .block3 {
+    height: 20em; } }

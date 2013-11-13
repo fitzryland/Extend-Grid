@@ -63,14 +63,17 @@ $lightPurple: #d3cbff;
 // (name, breakpoint-min-width, breakpoint-max-width, max-width, gutter, columns)
 $layouts:
 	(small, 0px, 600px, 100%, 4%, 2)
-	(medium, 601px, 959px, 800px, 3%, 3)
-	(large, 960px, 99999px, 1200px, 2%, 4);
+	(medium, 601px, 959px, 100%, 3%, 4)
+	(large, 960px, 99999px, 1200px, 2%, 6);
 
 // add a media query for each layout
 @mixin break($media) {
 	@each $layout in $layouts {
 		@if nth($layout, 1) == $media {
-			@media only screen and (min-width: nth($layout, 2)) and (max-width: nth($layout, 3)) { @content; }
+			@media all and
+				(min-width: nth($layout, 2)) and
+				(max-width: nth($layout, 3))
+				{ @content; }
 		}
 	}
 }
@@ -92,6 +95,9 @@ $layouts:
 		}
 		%#{$layout-name}-wrap {
 			max-width: $width;
+		}
+		%#{$layout-name}-rowstart {
+			clear: both;
 		}
 		%#{$layout-name}-rowend {
 			margin-right: 0;
@@ -120,18 +126,19 @@ section {
 	background-color: $purple;
 	height: 1000px;
 	margin: 0 auto;
-	> div {
-		border: 1px solid $darkPurple;
-		background-color: $lightPurple;
-		float: left;
-		min-height: 100px;
-		padding: 1em;
-	}
+}
+.block1, .block2, .block3, .block4, .block5, .block6, .block7 {
+	border: 1px solid $darkPurple;
+	background-color: $lightPurple;
+	float: left;
+	min-height: 100px;
+	margin-top: 1em;
+	padding: 1em;
 }
 .block1 {
 	@extend %small-cols-1;
 	@extend %medium-cols-1;
-	@extend %large-cols-1;
+	@extend %large-cols-2;
 	h1 {
 		margin: 0;
 	}
@@ -152,23 +159,31 @@ section {
 }
 .block3 {
 	@extend %small-cols-2, %small-rowend;
-	@extend %medium-cols-1, %medium-rowend;
-	@extend %large-cols-1, %large-rowend;
+	@extend %medium-cols-2, %medium-rowend;
+	@extend %large-cols-1;
+	@include break(medium) {
+		height: 20em;
+	}
 }
 .block4 {
 	@extend %small-cols-1;
-	@extend %medium-cols-3, %medium-rowend;
-	@extend %large-cols-3, %large-rowend;
+	@extend %medium-cols-3, %medium-rowstart;
+	@extend %large-cols-1, %large-rowend;
 }
 .block5 {
 	@extend %small-cols-1, %small-rowend;
-	@extend %medium-cols-2;
+	@extend %medium-cols-1, %medium-rowend;
 	@extend %large-cols-3;
 }
 .block6 {
 	@extend %small-cols-2;
-	@extend %medium-cols-1, %medium-rowend;
-	@extend %large-cols-1, %large-rowend;
+	@extend %medium-cols-2, %medium-rowstart;
+	@extend %large-cols-1;
+}
+.block7 {
+	@extend %small-cols-1;
+	@extend %medium-cols-2, %medium-rowend;
+	@extend %large-cols-2, %large-rowend;
 }
 
 // `7MM"""Mq.
