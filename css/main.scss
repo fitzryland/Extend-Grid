@@ -64,6 +64,7 @@ $lightPurple: #d3cbff;
 $layouts:
 	(small, 0px, 600px, 100%, 4%, 2)
 	(medium, 601px, 959px, 100%, 3%, 4)
+	(medium-andup, 601px, 99999px, 100%, 3%, 4) // really no ideal way to add a media query
 	(large, 960px, 99999px, 1200px, 2%, 6);
 
 // add a media query for each layout
@@ -147,6 +148,9 @@ section {
 	}
 	@include break(medium) {
 		background-color: orange;
+	}
+	@include break(medium-andup) {
+		height: 20em;
 	}
 	@include break(large) {
 		background-color: yellow;
