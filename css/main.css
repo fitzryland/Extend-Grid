@@ -59,8 +59,11 @@ html {
 
 section {
   background-color: #9f90ff;
-  height: 1000px;
   margin: 0 auto; }
+  section:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 .block1, .block2, .block3, .block4, .block5, .block6, .block7 {
   border: 1px solid #655795;
