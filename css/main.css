@@ -31,7 +31,7 @@
   .block4, .block6 {
     clear: both; }
 
-  .block3, .block5, .block7, .block-4 {
+  .block3, .block5, .block7 {
     margin-right: 0; } }
 @media all and (max-width: 99999px) and (min-width: 960px) {
   .block3, .block4, .block6 {
@@ -68,7 +68,7 @@ section {
 h1 {
   margin: 0; }
 
-.block1, .block2, .block3, .block4, .block5, .block6, .block7, .block-1-1, .block-1-2, .block-2, .block-3, .block-4, .block-5, .block-6, .block-7 {
+.block1, .block2, .block3, .block4, .block5, .block6, .block7, .block-1-1, .block-1-2, .block-2, .block-3-1, .block-3-2, .block-3-3, .block-4, .block-5, .block-6, .block-7 {
   border: 1px solid #655795;
   background-color: #d3cbff;
   float: left;
@@ -101,131 +101,361 @@ h1 {
     clear: both; }
   @media all and (min-width: 0px) and (max-width: 600px) {
     .block-1 {
+      float: left;
       margin-right: 4%;
-      width: 100%; } }
+      width: 100%;
+      local-width: 1;
+      gutter: 0.04;
+      local-columns: 2;
+      results: 1.04; } }
   @media all and (min-width: 601px) and (max-width: 959px) {
     .block-1 {
+      float: left;
       margin-right: 3%;
-      width: 74.25%; } }
+      width: 74.25%;
+      local-width: 1;
+      gutter: 0.03;
+      local-columns: 4;
+      results: 1.03; } }
   @media all and (min-width: 960px) and (max-width: 99999px) {
     .block-1 {
+      float: left;
       margin-right: 2%;
-      width: 66%; } }
+      width: 66%;
+      local-width: 1;
+      gutter: 0.02;
+      local-columns: 6;
+      results: 1.02; } }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-1-1 {
+    float: left;
     margin-right: 4%;
-    width: 48.0%; } }
+    width: 48.0%;
+    local-width: 1;
+    gutter: 0.04;
+    local-columns: 2;
+    results: 1.04; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-1-1 {
+    float: left;
     margin-right: 3%;
-    width: 22.75%; } }
+    width: 31.33333%;
+    local-width: 1;
+    gutter: 0.03;
+    local-columns: 3;
+    results: 1.03; } }
 @media all and (min-width: 960px) and (max-width: 99999px) {
   .block-1-1 {
+    float: left;
     margin-right: 2%;
-    width: 15.0%; } }
+    width: 23.5%;
+    local-width: 1;
+    gutter: 0.02;
+    local-columns: 4;
+    results: 1.02; } }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-1-2 {
+    float: left;
     margin-right: 4%;
-    width: 48.0%; } }
+    width: 48.0%;
+    local-width: 1;
+    gutter: 0.04;
+    local-columns: 2;
+    results: 1.04; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-1-2 {
+    float: left;
     margin-right: 3%;
-    width: 48.5%; } }
+    width: 65.66667%;
+    local-width: 1;
+    gutter: 0.03;
+    local-columns: 3;
+    results: 1.03; } }
 @media all and (min-width: 960px) and (max-width: 99999px) {
   .block-1-2 {
+    float: left;
     margin-right: 2%;
-    width: 15.0%; } }
+    width: 23.5%;
+    local-width: 1;
+    gutter: 0.02;
+    local-columns: 4;
+    results: 1.02; } }
 .block-1 .block-1-2 {
   margin-right: 0; }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-2 {
+    float: left;
     margin-right: 4%;
-    width: 48.0%; } }
+    width: 48.0%;
+    local-width: 1;
+    gutter: 0.04;
+    local-columns: 2;
+    results: 1.04; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-2 {
+    float: left;
     margin-right: 3%;
-    width: 22.75%; } }
+    width: 22.75%;
+    local-width: 1;
+    gutter: 0.03;
+    local-columns: 4;
+    results: 1.03; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-2 {
     margin-right: 0; } }
 @media all and (min-width: 960px) and (max-width: 99999px) {
   .block-2 {
+    float: left;
     margin-right: 2%;
-    width: 15.0%; } }
+    width: 15.0%;
+    local-width: 1;
+    gutter: 0.02;
+    local-columns: 6;
+    results: 1.02; } }
+
+.block-3 {
+  background-color: #BAD555; }
+  @media all and (min-width: 0px) and (max-width: 600px) {
+    .block-3 {
+      float: left;
+      margin-right: 4%;
+      width: 48.0%;
+      local-width: 1;
+      gutter: 0.04;
+      local-columns: 2;
+      results: 1.04; } }
+  @media all and (min-width: 0px) and (max-width: 600px) {
+    .block-3 {
+      margin-right: 0; } }
+  @media all and (min-width: 601px) and (max-width: 959px) {
+    .block-3 {
+      float: left;
+      margin-right: 3%;
+      width: 100%;
+      local-width: 1;
+      gutter: 0.03;
+      local-columns: 4;
+      results: 1.03; } }
+  @media all and (min-width: 960px) and (max-width: 99999px) {
+    .block-3 {
+      float: left;
+      margin-right: 2%;
+      width: 66%;
+      local-width: 1;
+      gutter: 0.02;
+      local-columns: 6;
+      results: 1.02; } }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
-  .block-3 {
+  .block-3-1 {
+    float: left;
     margin-right: 4%;
-    width: 48.0%; } }
-@media all and (min-width: 0px) and (max-width: 600px) {
-  .block-3 {
-    margin-right: 0; } }
+    width: 100%;
+    local-width: 1;
+    gutter: 0.04;
+    local-columns: 1;
+    results: 1.04; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
-  .block-3 {
+  .block-3-1 {
+    float: left;
     margin-right: 3%;
-    width: 22.75%; } }
+    width: 22.75%;
+    local-width: 1;
+    gutter: 0.03;
+    local-columns: 4;
+    results: 1.03; } }
 @media all and (min-width: 960px) and (max-width: 99999px) {
-  .block-3 {
+  .block-3-1 {
+    float: left;
     margin-right: 2%;
-    width: 15.0%; } }
+    width: 23.5%;
+    local-width: 1;
+    gutter: 0.02;
+    local-columns: 4;
+    results: 1.02; } }
+
+@media all and (min-width: 0px) and (max-width: 600px) {
+  .block-3-2 {
+    float: left;
+    margin-right: 4%;
+    width: 100%;
+    local-width: 1;
+    gutter: 0.04;
+    local-columns: 1;
+    results: 1.04; } }
+@media all and (min-width: 601px) and (max-width: 959px) {
+  .block-3-2 {
+    float: left;
+    margin-right: 3%;
+    width: 22.75%;
+    local-width: 1;
+    gutter: 0.03;
+    local-columns: 4;
+    results: 1.03; } }
+@media all and (min-width: 960px) and (max-width: 99999px) {
+  .block-3-2 {
+    float: left;
+    margin-right: 2%;
+    width: 23.5%;
+    local-width: 1;
+    gutter: 0.02;
+    local-columns: 4;
+    results: 1.02; } }
+
+@media all and (min-width: 0px) and (max-width: 600px) {
+  .block-3-3 {
+    float: left;
+    margin-right: 4%;
+    width: 100%;
+    local-width: 1;
+    gutter: 0.04;
+    local-columns: 1;
+    results: 1.04; } }
+@media all and (min-width: 601px) and (max-width: 959px) {
+  .block-3-3 {
+    float: left;
+    margin-right: 3%;
+    width: 48.5%;
+    local-width: 1;
+    gutter: 0.03;
+    local-columns: 4;
+    results: 1.03; } }
+@media all and (min-width: 601px) and (max-width: 959px) {
+  .block-3-3 {
+    margin-right: 0; } }
+@media all and (min-width: 960px) and (max-width: 99999px) {
+  .block-3-3 {
+    float: left;
+    margin-right: 2%;
+    width: 23.5%;
+    local-width: 1;
+    gutter: 0.02;
+    local-columns: 4;
+    results: 1.02; } }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-4 {
+    float: left;
     margin-right: 4%;
-    width: 100%; } }
+    width: 100%;
+    local-width: 1;
+    gutter: 0.04;
+    local-columns: 2;
+    results: 1.04; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-4 {
+    float: left;
     margin-right: 3%;
-    width: 100%; } }
+    width: 74.25%;
+    local-width: 1;
+    gutter: 0.03;
+    local-columns: 4;
+    results: 1.03; } }
+@media all and (min-width: 601px) and (max-width: 959px) {
+  .block-4 {
+    margin-right: 0; } }
 @media all and (min-width: 960px) and (max-width: 99999px) {
   .block-4 {
+    float: left;
     margin-right: 2%;
-    width: 66%; } }
+    width: 66%;
+    local-width: 1;
+    gutter: 0.02;
+    local-columns: 6;
+    results: 1.02; } }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-5 {
     margin-right: 0; } }
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-5 {
+    float: left;
     margin-right: 4%;
-    width: 100%; } }
+    width: 100%;
+    local-width: 1;
+    gutter: 0.04;
+    local-columns: 2;
+    results: 1.04; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-5 {
+    float: left;
     margin-right: 3%;
-    width: 74.25%; } }
+    width: 74.25%;
+    local-width: 1;
+    gutter: 0.03;
+    local-columns: 4;
+    results: 1.03; } }
 @media all and (min-width: 960px) and (max-width: 99999px) {
   .block-5 {
+    float: left;
     margin-right: 2%;
-    width: 66%; } }
+    width: 66%;
+    local-width: 1;
+    gutter: 0.02;
+    local-columns: 6;
+    results: 1.02; } }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-6 {
+    float: left;
     margin-right: 4%;
-    width: 100%; } }
+    width: 100%;
+    local-width: 1;
+    gutter: 0.04;
+    local-columns: 2;
+    results: 1.04; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-6 {
+    float: left;
     margin-right: 3%;
-    width: 74.25%; } }
+    width: 22.75%;
+    local-width: 1;
+    gutter: 0.03;
+    local-columns: 4;
+    results: 1.03; } }
+@media all and (min-width: 601px) and (max-width: 959px) {
+  .block-6 {
+    margin-right: 0; } }
 @media all and (min-width: 960px) and (max-width: 99999px) {
   .block-6 {
+    float: left;
     margin-right: 2%;
-    width: 66%; } }
+    width: 66%;
+    local-width: 1;
+    gutter: 0.02;
+    local-columns: 6;
+    results: 1.02; } }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-7 {
+    float: left;
     margin-right: 4%;
-    width: 100%; } }
+    width: 100%;
+    local-width: 1;
+    gutter: 0.04;
+    local-columns: 2;
+    results: 1.04; } }
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-7 {
     margin-right: 0; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-7 {
+    float: left;
     margin-right: 3%;
-    width: 74.25%; } }
+    width: 100%;
+    local-width: 1;
+    gutter: 0.03;
+    local-columns: 4;
+    results: 1.03; } }
 @media all and (min-width: 960px) and (max-width: 99999px) {
   .block-7 {
+    float: left;
     margin-right: 2%;
-    width: 66%; } }
+    width: 66%;
+    local-width: 1;
+    gutter: 0.02;
+    local-columns: 6;
+    results: 1.02; } }

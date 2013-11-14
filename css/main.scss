@@ -39,13 +39,21 @@ $layouts:
 		@if nth($layout, 1) == $layout-name {
 			$columns: nth($layout, 6);
 			$local-width: 1;
-			@if not $parent-cols == '' {
-				$local-width: $parent-cols/$columns;
+			$local-columns: $columns;
+			@if $parent-cols == '' {
+			} @else {
+				//$local-width: $parent-cols/$columns;
+				$local-columns: $parent-cols;
 			}
 			$gutter: nth($layout, 5) * $local-width / 100;
 			@include break($layout-name) {
+				float: left;
 				margin-right: percentage($gutter);
-				width: percentage(((($local-width + $gutter) / $columns) * $cols) - $gutter);
+				width: percentage(((($local-width + $gutter) / $local-columns) * $cols) - $gutter);
+				local-width: $local-width;
+				gutter: $gutter;
+				local-columns: $local-columns;
+				results: ($local-width + $gutter);
 			}
 		}
 	}
@@ -200,19 +208,42 @@ h1 {
 	@include cols(large, 1, '');
 }
 .block-3 {
-	@extend %block;
+	background-color: #BAD555;
 	@include cols(small, 1, '');
 	@include break(small) {
 		margin-right: 0;
 	}
-	@include cols(medium, 1, '');
-	@include cols(large, 1, '');
+	@include cols(medium, 4, '');
+	@include cols(large, 4, '');
+}
+.block-3-1 {
+	@extend %block;
+	@include cols(small, 1, 1);
+	@include cols(medium, 1, 4);
+	@include cols(large, 1, 4);
+}
+.block-3-2 {
+	@extend %block;
+	@include cols(small, 1, 1);
+	@include cols(medium, 1, 4);
+	@include cols(large, 1, 4);
+}
+.block-3-3 {
+	@extend %block;
+	@include cols(small, 1, 1);
+	@include cols(medium, 2, 4);
+	@include break(medium) {
+		margin-right: 0;
+	}
+	@include cols(large, 1, 4);
 }
 .block-4 {
 	@extend %block;
-	@extend %medium-rowend;
 	@include cols(small, 2, '');
-	@include cols(medium, 4, '');
+	@include cols(medium, 3, '');
+	@include break(medium) {
+		margin-right: 0;
+	}
 	@include cols(large, 4, '');
 
 }
@@ -228,7 +259,10 @@ h1 {
 .block-6 {
 	@extend %block;
 	@include cols(small, 2, '');
-	@include cols(medium, 3, '');
+	@include cols(medium, 1, '');
+	@include break(medium) {
+		margin-right: 0;
+	}
 	@include cols(large, 4, '');
 }
 .block-7 {
@@ -237,6 +271,6 @@ h1 {
 	@include break(small) {
 		margin-right: 0;
 	}
-	@include cols(medium, 3, '');
+	@include cols(medium, 4, '');
 	@include cols(large, 4, '');
 }
