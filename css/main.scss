@@ -16,10 +16,10 @@ $lightPurple: #d3cbff;
 
 // (name, breakpoint-min-width, breakpoint-max-width, max-width, gutter, columns)
 $layouts:
-	(small, 0px, 600px, 100%, 4%, 2)
-	(medium, 601px, 959px, 100%, 3%, 4)
-	(medium-andup, 601px, 99999px, 100%, 3%, 4) // really not ideal way to add a media query
-	(large, 960px, 99999px, 1200px, 2%, 6);
+	(small, 0px, 600px, 100%, 4, 2)
+	(medium, 601px, 959px, 100%, 3, 4)
+	(medium-andup, 601px, 99999px, 100%, 3, 4) // really not ideal way to add a media query
+	(large, 960px, 99999px, 1200px, 2, 6);
 
 // add a media query for each layout
 @mixin break($media) {
@@ -33,13 +33,38 @@ $layouts:
 	}
 }
 
+// when the cols have to be relative to the container
+@mixin cols($layout-name, $cols, $parent-cols) {
+	@each $layout in $layouts {
+		@if nth($layout, 1) == $layout-name {
+			$columns: nth($layout, 6);
+			$local-width: 1;
+			@if not $parent-cols == '' {
+				$local-width: $parent-cols/$columns;
+			}
+			$gutter: nth($layout, 5) * $local-width / 100;
+			@include break($layout-name) {
+				margin-right: percentage($gutter);
+				width: percentage(((($local-width + $gutter) / $columns) * $cols) - $gutter);
+			}
+		}
+	}
+}
+@mixin layoutWrap($layout) {
+	@include break($layout) {
+		max-width: nth($layout, 4);
+	}
+}
+
 // Extendable Flexible Grid
+// an extendable aproach would work if each col was
+// not relative to its container.
 @each $layout in $layouts {
 	$layout-name: nth($layout, 1);
 	$min-width: nth($layout, 2);
 	$max-width: nth($layout, 3);
 	$width: nth($layout, 4);
-	$gutter: nth($layout, 5);
+	$gutter: percentage(nth($layout, 5)/100);
 	$columns: nth($layout, 6);
 	@media all and (max-width: $max-width) and (min-width: $min-width) {
 		@for $ii from 1 through $columns {
@@ -72,10 +97,13 @@ section {
 	@extend %medium-wrap;
 	@extend %large-wrap;
 	background-color: $purple;
-	margin: 0 auto;
+	margin: 2em auto 0;
 	@include group();
 }
-.block1, .block2, .block3, .block4, .block5, .block6, .block7 {
+h1 {
+	margin: 0;
+}
+%block {
 	border: 1px solid $darkPurple;
 	background-color: $lightPurple;
 	float: left;
@@ -83,13 +111,13 @@ section {
 	margin-top: 1em;
 	padding: 1em;
 }
+.block1, .block2, .block3, .block4, .block5, .block6, .block7 {
+	@extend %block;
+}
 .block1 {
 	@extend %small-cols-1;
 	@extend %medium-cols-1;
 	@extend %large-cols-2;
-	h1 {
-		margin: 0;
-	}
 	@include break(small) {
 		background-color: red;
 	}
@@ -135,4 +163,80 @@ section {
 	@extend %small-cols-1;
 	@extend %medium-cols-2, %medium-rowend;
 	@extend %large-cols-2, %large-rowend;
+}
+.block {
+}
+.block-1, .block-2, .block-3, .block-4, .block-5, .block-6, .block-7 {
+}
+.block-1 {
+	background-color: #BAD555;
+	@include group();
+	@include cols(small, 2, '');
+	@include cols(medium, 3, '');
+	@include cols(large, 4, '');
+}
+.block-1-1 {
+	@extend %block;
+	@include cols(small, 1, 2);
+	@include cols(medium, 1, 3);
+	@include cols(large, 1, 4);
+}
+.block-1-2 {
+	@extend %block;
+	@include cols(small, 1, 2);
+	@include cols(medium, 2, 3);
+	@include cols(large, 1, 4);
+	.block-1 & {
+		margin-right: 0;
+	}
+}
+.block-2 {
+	@extend %block;
+	@include cols(small, 1, '');
+	@include cols(medium, 1, '');
+	@include break(medium) {
+		margin-right: 0;
+	}
+	@include cols(large, 1, '');
+}
+.block-3 {
+	@extend %block;
+	@include cols(small, 1, '');
+	@include break(small) {
+		margin-right: 0;
+	}
+	@include cols(medium, 1, '');
+	@include cols(large, 1, '');
+}
+.block-4 {
+	@extend %block;
+	@extend %medium-rowend;
+	@include cols(small, 2, '');
+	@include cols(medium, 4, '');
+	@include cols(large, 4, '');
+
+}
+.block-5 {
+	@extend %block;
+	@include break(small) {
+		margin-right: 0;
+	}
+	@include cols(small, 2, '');
+	@include cols(medium, 3, '');
+	@include cols(large, 4, '');
+}
+.block-6 {
+	@extend %block;
+	@include cols(small, 2, '');
+	@include cols(medium, 3, '');
+	@include cols(large, 4, '');
+}
+.block-7 {
+	@extend %block;
+	@include cols(small, 2, '');
+	@include break(small) {
+		margin-right: 0;
+	}
+	@include cols(medium, 3, '');
+	@include cols(large, 4, '');
 }

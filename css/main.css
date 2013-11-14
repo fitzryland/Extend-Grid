@@ -31,7 +31,7 @@
   .block4, .block6 {
     clear: both; }
 
-  .block3, .block5, .block7 {
+  .block3, .block5, .block7, .block-4 {
     margin-right: 0; } }
 @media all and (max-width: 99999px) and (min-width: 960px) {
   .block3, .block4, .block6 {
@@ -59,13 +59,16 @@ html {
 
 section {
   background-color: #9f90ff;
-  margin: 0 auto; }
+  margin: 2em auto 0; }
   section:after {
     content: "";
     display: table;
     clear: both; }
 
-.block1, .block2, .block3, .block4, .block5, .block6, .block7 {
+h1 {
+  margin: 0; }
+
+.block1, .block2, .block3, .block4, .block5, .block6, .block7, .block-1-1, .block-1-2, .block-2, .block-3, .block-4, .block-5, .block-6, .block-7 {
   border: 1px solid #655795;
   background-color: #d3cbff;
   float: left;
@@ -73,8 +76,6 @@ section {
   margin-top: 1em;
   padding: 1em; }
 
-.block1 h1 {
-  margin: 0; }
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block1 {
     background-color: red; } }
@@ -91,3 +92,140 @@ section {
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block3 {
     height: 20em; } }
+
+.block-1 {
+  background-color: #BAD555; }
+  .block-1:after {
+    content: "";
+    display: table;
+    clear: both; }
+  @media all and (min-width: 0px) and (max-width: 600px) {
+    .block-1 {
+      margin-right: 4%;
+      width: 100%; } }
+  @media all and (min-width: 601px) and (max-width: 959px) {
+    .block-1 {
+      margin-right: 3%;
+      width: 74.25%; } }
+  @media all and (min-width: 960px) and (max-width: 99999px) {
+    .block-1 {
+      margin-right: 2%;
+      width: 66%; } }
+
+@media all and (min-width: 0px) and (max-width: 600px) {
+  .block-1-1 {
+    margin-right: 4%;
+    width: 48.0%; } }
+@media all and (min-width: 601px) and (max-width: 959px) {
+  .block-1-1 {
+    margin-right: 3%;
+    width: 22.75%; } }
+@media all and (min-width: 960px) and (max-width: 99999px) {
+  .block-1-1 {
+    margin-right: 2%;
+    width: 15.0%; } }
+
+@media all and (min-width: 0px) and (max-width: 600px) {
+  .block-1-2 {
+    margin-right: 4%;
+    width: 48.0%; } }
+@media all and (min-width: 601px) and (max-width: 959px) {
+  .block-1-2 {
+    margin-right: 3%;
+    width: 48.5%; } }
+@media all and (min-width: 960px) and (max-width: 99999px) {
+  .block-1-2 {
+    margin-right: 2%;
+    width: 15.0%; } }
+.block-1 .block-1-2 {
+  margin-right: 0; }
+
+@media all and (min-width: 0px) and (max-width: 600px) {
+  .block-2 {
+    margin-right: 4%;
+    width: 48.0%; } }
+@media all and (min-width: 601px) and (max-width: 959px) {
+  .block-2 {
+    margin-right: 3%;
+    width: 22.75%; } }
+@media all and (min-width: 601px) and (max-width: 959px) {
+  .block-2 {
+    margin-right: 0; } }
+@media all and (min-width: 960px) and (max-width: 99999px) {
+  .block-2 {
+    margin-right: 2%;
+    width: 15.0%; } }
+
+@media all and (min-width: 0px) and (max-width: 600px) {
+  .block-3 {
+    margin-right: 4%;
+    width: 48.0%; } }
+@media all and (min-width: 0px) and (max-width: 600px) {
+  .block-3 {
+    margin-right: 0; } }
+@media all and (min-width: 601px) and (max-width: 959px) {
+  .block-3 {
+    margin-right: 3%;
+    width: 22.75%; } }
+@media all and (min-width: 960px) and (max-width: 99999px) {
+  .block-3 {
+    margin-right: 2%;
+    width: 15.0%; } }
+
+@media all and (min-width: 0px) and (max-width: 600px) {
+  .block-4 {
+    margin-right: 4%;
+    width: 100%; } }
+@media all and (min-width: 601px) and (max-width: 959px) {
+  .block-4 {
+    margin-right: 3%;
+    width: 100%; } }
+@media all and (min-width: 960px) and (max-width: 99999px) {
+  .block-4 {
+    margin-right: 2%;
+    width: 66%; } }
+
+@media all and (min-width: 0px) and (max-width: 600px) {
+  .block-5 {
+    margin-right: 0; } }
+@media all and (min-width: 0px) and (max-width: 600px) {
+  .block-5 {
+    margin-right: 4%;
+    width: 100%; } }
+@media all and (min-width: 601px) and (max-width: 959px) {
+  .block-5 {
+    margin-right: 3%;
+    width: 74.25%; } }
+@media all and (min-width: 960px) and (max-width: 99999px) {
+  .block-5 {
+    margin-right: 2%;
+    width: 66%; } }
+
+@media all and (min-width: 0px) and (max-width: 600px) {
+  .block-6 {
+    margin-right: 4%;
+    width: 100%; } }
+@media all and (min-width: 601px) and (max-width: 959px) {
+  .block-6 {
+    margin-right: 3%;
+    width: 74.25%; } }
+@media all and (min-width: 960px) and (max-width: 99999px) {
+  .block-6 {
+    margin-right: 2%;
+    width: 66%; } }
+
+@media all and (min-width: 0px) and (max-width: 600px) {
+  .block-7 {
+    margin-right: 4%;
+    width: 100%; } }
+@media all and (min-width: 0px) and (max-width: 600px) {
+  .block-7 {
+    margin-right: 0; } }
+@media all and (min-width: 601px) and (max-width: 959px) {
+  .block-7 {
+    margin-right: 3%;
+    width: 74.25%; } }
+@media all and (min-width: 960px) and (max-width: 99999px) {
+  .block-7 {
+    margin-right: 2%;
+    width: 66%; } }
