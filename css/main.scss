@@ -1,3 +1,5 @@
+@import 'normalize';
+/* Start Grid Stuff */
 $darkPurple: #655795;
 $purple: #9f90ff;
 $lightPurple: #d3cbff;
@@ -15,83 +17,13 @@ $lightPurple: #d3cbff;
 //
 
 // (name, breakpoint-min-width, breakpoint-max-width, max-width, gutter, columns)
-// (name, breakpoint-min-width, breakpoint-max-width, max-width, gutter, columns)
 $layouts:
 	(small, 0px, 600px, 100%, 4, 2)
 	(medium, 601px, 959px, 100%, 3, 4)
 	(medium-andup, 601px, 99999px, 100%, 3, 4) // really not ideal way to add a media query
 	(large, 960px, 99999px, 1200px, 2, 6); // 'large' is special name that is default for IE8
 
-// add a media query for each layout
-@mixin break($media) {
-	@each $layout in $layouts {
-		@if nth($layout, 1) == $media {
-			@media all and
-				(min-width: nth($layout, 2)) and
-				(max-width: nth($layout, 3))
-				{ @content; }
-			@if $media == 'large' {
-				.ie8 & { @content; }
-			}
-		}
-	}
-}
-@mixin cols($layout-name, $cols, $parent-cols) {
-	@each $layout in $layouts {
-		@if nth($layout, 1) == $layout-name {
-			$columns: nth($layout, 6);
-			$local-width: 1;
-			$local-columns: $columns;
-			@if $parent-cols == '' {
-			} @else {
-				$local-columns: $parent-cols;
-			}
-			$gutter: nth($layout, 5) * $local-width / 100;
-			@include break($layout-name) {
-				float: left;
-				margin-right: percentage($gutter);
-				width: percentage(((($local-width + $gutter) / $local-columns) * $cols) - $gutter);
-			}
-		}
-	}
-}
-@mixin layoutWrap($layout-name) {
-	@each $layout in $layouts {
-		@if nth($layout, 1) == $layout-name {
-			@include break($layout-name) {
-				margin: 0 auto;
-				max-width: nth($layout, 4);
-			}
-		}
-	}
-}
-%wrapAll {
-	@include layoutWrap(small);
-	@include layoutWrap(medium);
-	@include layoutWrap(large);
-}
-@mixin rowStart($layout) {
-	@include break($layout) {
-		clear: both;
-	}
-}
-@mixin rowEnd($layout) {
-	@include break($layout) {
-		margin-right: 0;
-	}
-}
-%rowEndAll {
-	@include rowEnd(small);
-	@include rowEnd(medium);
-	@include rowEnd(large);
-}
-// END GRID
-@function strip-units($number) {
-	@return $number / ($number * 0 + 1);
-}
 // Extendable Flexible Grid
-// an extendable aproach would work if each col was
-// not relative to its container.
 @each $layout in $layouts {
 	$layout-name: nth($layout, 1);
 	$min-width: nth($layout, 2);
@@ -133,7 +65,7 @@ $layouts:
 %all-rowend {
 	margin-right: 0;
 }
-
+// END GRID STUFF
 
 
 * {
@@ -162,61 +94,7 @@ h1 {
 	margin-top: 1em;
 	padding: 1em;
 }
-.block1, .block2, .block3, .block4, .block5, .block6, .block7 {
-	@extend %block;
-}
-.block1 {
-	@extend %small-cols-1;
-	@extend %medium-cols-1;
-	@extend %large-cols-2;
-	@include break(small) {
-		background-color: red;
-	}
-	@include break(medium) {
-		background-color: orange;
-	}
-	@include break(medium-andup) {
-		height: 20em;
-	}
-	@include break(large) {
-		background-color: yellow;
-	}
-}
-.block2 {
-	@extend %small-cols-1, %small-rowend;
-	@extend %medium-cols-1;
-	@extend %large-cols-2;
-}
-.block3 {
-	@extend %small-cols-2, %small-rowend;
-	@extend %medium-cols-2, %medium-rowend;
-	@extend %large-cols-1;
-	@include break(medium) {
-		height: 20em;
-	}
-}
-.block4 {
-	@extend %small-cols-1;
-	@extend %medium-cols-3, %medium-rowstart;
-	@extend %large-cols-1, %large-rowend;
-}
-.block5 {
-	@extend %small-cols-1, %small-rowend;
-	@extend %medium-cols-1, %medium-rowend;
-	@extend %large-cols-3;
-}
-.block6 {
-	@extend %small-cols-2;
-	@extend %medium-cols-2, %medium-rowstart;
-	@extend %large-cols-1;
-}
-.block7 {
-	@extend %small-cols-1;
-	@extend %medium-cols-2, %medium-rowend;
-	@extend %large-cols-2, %large-rowend;
-}
-.block {
-}
+
 .block-1, .block-2, .block-3, .block-4, .block-5, .block-6, .block-7 {
 }
 .block-1 {
