@@ -15,11 +15,12 @@ $lightPurple: #d3cbff;
 //
 
 // (name, breakpoint-min-width, breakpoint-max-width, max-width, gutter, columns)
+// (name, breakpoint-min-width, breakpoint-max-width, max-width, gutter, columns)
 $layouts:
 	(small, 0px, 600px, 100%, 4, 2)
 	(medium, 601px, 959px, 100%, 3, 4)
 	(medium-andup, 601px, 99999px, 100%, 3, 4) // really not ideal way to add a media query
-	(large, 960px, 99999px, 1200px, 2, 6);
+	(large, 960px, 99999px, 1200px, 2, 6); // 'large' is special name that is default for IE8
 
 // add a media query for each layout
 @mixin break($media) {
@@ -29,11 +30,12 @@ $layouts:
 				(min-width: nth($layout, 2)) and
 				(max-width: nth($layout, 3))
 				{ @content; }
+			@if $media == 'large' {
+				.ie8 & { @content; }
+			}
 		}
 	}
 }
-
-// when the cols have to be relative to the container
 @mixin cols($layout-name, $cols, $parent-cols) {
 	@each $layout in $layouts {
 		@if nth($layout, 1) == $layout-name {
@@ -42,7 +44,6 @@ $layouts:
 			$local-columns: $columns;
 			@if $parent-cols == '' {
 			} @else {
-				//$local-width: $parent-cols/$columns;
 				$local-columns: $parent-cols;
 			}
 			$gutter: nth($layout, 5) * $local-width / 100;
@@ -50,19 +51,41 @@ $layouts:
 				float: left;
 				margin-right: percentage($gutter);
 				width: percentage(((($local-width + $gutter) / $local-columns) * $cols) - $gutter);
-				local-width: $local-width;
-				gutter: $gutter;
-				local-columns: $local-columns;
-				results: ($local-width + $gutter);
 			}
 		}
 	}
 }
-@mixin layoutWrap($layout) {
-	@include break($layout) {
-		max-width: nth($layout, 4);
+@mixin layoutWrap($layout-name) {
+	@each $layout in $layouts {
+		@if nth($layout, 1) == $layout-name {
+			@include break($layout-name) {
+				margin: 0 auto;
+				max-width: nth($layout, 4);
+			}
+		}
 	}
 }
+%wrapAll {
+	@include layoutWrap(small);
+	@include layoutWrap(medium);
+	@include layoutWrap(large);
+}
+@mixin rowStart($layout) {
+	@include break($layout) {
+		clear: both;
+	}
+}
+@mixin rowEnd($layout) {
+	@include break($layout) {
+		margin-right: 0;
+	}
+}
+%rowEndAll {
+	@include rowEnd(small);
+	@include rowEnd(medium);
+	@include rowEnd(large);
+}
+// END GRID
 
 // Extendable Flexible Grid
 // an extendable aproach would work if each col was

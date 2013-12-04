@@ -88,6 +88,8 @@ h1 {
 @media all and (min-width: 960px) and (max-width: 99999px) {
   .block1 {
     background-color: yellow; } }
+.ie8 .block1 {
+  background-color: yellow; }
 
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block3 {
@@ -103,85 +105,61 @@ h1 {
     .block-1 {
       float: left;
       margin-right: 4%;
-      width: 100%;
-      local-width: 1;
-      gutter: 0.04;
-      local-columns: 2;
-      results: 1.04; } }
+      width: 100%; } }
   @media all and (min-width: 601px) and (max-width: 959px) {
     .block-1 {
       float: left;
       margin-right: 3%;
-      width: 74.25%;
-      local-width: 1;
-      gutter: 0.03;
-      local-columns: 4;
-      results: 1.03; } }
+      width: 74.25%; } }
   @media all and (min-width: 960px) and (max-width: 99999px) {
     .block-1 {
       float: left;
       margin-right: 2%;
-      width: 66%;
-      local-width: 1;
-      gutter: 0.02;
-      local-columns: 6;
-      results: 1.02; } }
+      width: 66%; } }
+  .ie8 .block-1 {
+    float: left;
+    margin-right: 2%;
+    width: 66%; }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-1-1 {
     float: left;
     margin-right: 4%;
-    width: 48.0%;
-    local-width: 1;
-    gutter: 0.04;
-    local-columns: 2;
-    results: 1.04; } }
+    width: 48.0%; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-1-1 {
     float: left;
     margin-right: 3%;
-    width: 31.33333%;
-    local-width: 1;
-    gutter: 0.03;
-    local-columns: 3;
-    results: 1.03; } }
+    width: 31.33333%; } }
 @media all and (min-width: 960px) and (max-width: 99999px) {
   .block-1-1 {
     float: left;
     margin-right: 2%;
-    width: 23.5%;
-    local-width: 1;
-    gutter: 0.02;
-    local-columns: 4;
-    results: 1.02; } }
+    width: 23.5%; } }
+.ie8 .block-1-1 {
+  float: left;
+  margin-right: 2%;
+  width: 23.5%; }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-1-2 {
     float: left;
     margin-right: 4%;
-    width: 48.0%;
-    local-width: 1;
-    gutter: 0.04;
-    local-columns: 2;
-    results: 1.04; } }
+    width: 48.0%; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-1-2 {
     float: left;
     margin-right: 3%;
-    width: 65.66667%;
-    local-width: 1;
-    gutter: 0.03;
-    local-columns: 3;
-    results: 1.03; } }
+    width: 65.66667%; } }
 @media all and (min-width: 960px) and (max-width: 99999px) {
   .block-1-2 {
     float: left;
     margin-right: 2%;
-    width: 23.5%;
-    local-width: 1;
-    gutter: 0.02;
-    local-columns: 4;
-    results: 1.02; } }
+    width: 23.5%; } }
+.ie8 .block-1-2 {
+  float: left;
+  margin-right: 2%;
+  width: 23.5%; }
 .block-1 .block-1-2 {
   margin-right: 0; }
 
@@ -189,20 +167,12 @@ h1 {
   .block-2 {
     float: left;
     margin-right: 4%;
-    width: 48.0%;
-    local-width: 1;
-    gutter: 0.04;
-    local-columns: 2;
-    results: 1.04; } }
+    width: 48.0%; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-2 {
     float: left;
     margin-right: 3%;
-    width: 22.75%;
-    local-width: 1;
-    gutter: 0.03;
-    local-columns: 4;
-    results: 1.03; } }
+    width: 22.75%; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-2 {
     margin-right: 0; } }
@@ -210,11 +180,11 @@ h1 {
   .block-2 {
     float: left;
     margin-right: 2%;
-    width: 15.0%;
-    local-width: 1;
-    gutter: 0.02;
-    local-columns: 6;
-    results: 1.02; } }
+    width: 15.0%; } }
+.ie8 .block-2 {
+  float: left;
+  margin-right: 2%;
+  width: 15.0%; }
 
 .block-3 {
   background-color: #BAD555; }
@@ -222,11 +192,7 @@ h1 {
     .block-3 {
       float: left;
       margin-right: 4%;
-      width: 48.0%;
-      local-width: 1;
-      gutter: 0.04;
-      local-columns: 2;
-      results: 1.04; } }
+      width: 48.0%; } }
   @media all and (min-width: 0px) and (max-width: 600px) {
     .block-3 {
       margin-right: 0; } }
@@ -234,95 +200,67 @@ h1 {
     .block-3 {
       float: left;
       margin-right: 3%;
-      width: 100%;
-      local-width: 1;
-      gutter: 0.03;
-      local-columns: 4;
-      results: 1.03; } }
+      width: 100%; } }
   @media all and (min-width: 960px) and (max-width: 99999px) {
     .block-3 {
       float: left;
       margin-right: 2%;
-      width: 66%;
-      local-width: 1;
-      gutter: 0.02;
-      local-columns: 6;
-      results: 1.02; } }
+      width: 66%; } }
+  .ie8 .block-3 {
+    float: left;
+    margin-right: 2%;
+    width: 66%; }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-3-1 {
     float: left;
     margin-right: 4%;
-    width: 100%;
-    local-width: 1;
-    gutter: 0.04;
-    local-columns: 1;
-    results: 1.04; } }
+    width: 100%; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-3-1 {
     float: left;
     margin-right: 3%;
-    width: 22.75%;
-    local-width: 1;
-    gutter: 0.03;
-    local-columns: 4;
-    results: 1.03; } }
+    width: 22.75%; } }
 @media all and (min-width: 960px) and (max-width: 99999px) {
   .block-3-1 {
     float: left;
     margin-right: 2%;
-    width: 23.5%;
-    local-width: 1;
-    gutter: 0.02;
-    local-columns: 4;
-    results: 1.02; } }
+    width: 23.5%; } }
+.ie8 .block-3-1 {
+  float: left;
+  margin-right: 2%;
+  width: 23.5%; }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-3-2 {
     float: left;
     margin-right: 4%;
-    width: 100%;
-    local-width: 1;
-    gutter: 0.04;
-    local-columns: 1;
-    results: 1.04; } }
+    width: 100%; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-3-2 {
     float: left;
     margin-right: 3%;
-    width: 22.75%;
-    local-width: 1;
-    gutter: 0.03;
-    local-columns: 4;
-    results: 1.03; } }
+    width: 22.75%; } }
 @media all and (min-width: 960px) and (max-width: 99999px) {
   .block-3-2 {
     float: left;
     margin-right: 2%;
-    width: 23.5%;
-    local-width: 1;
-    gutter: 0.02;
-    local-columns: 4;
-    results: 1.02; } }
+    width: 23.5%; } }
+.ie8 .block-3-2 {
+  float: left;
+  margin-right: 2%;
+  width: 23.5%; }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-3-3 {
     float: left;
     margin-right: 4%;
-    width: 100%;
-    local-width: 1;
-    gutter: 0.04;
-    local-columns: 1;
-    results: 1.04; } }
+    width: 100%; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-3-3 {
     float: left;
     margin-right: 3%;
-    width: 48.5%;
-    local-width: 1;
-    gutter: 0.03;
-    local-columns: 4;
-    results: 1.03; } }
+    width: 48.5%; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-3-3 {
     margin-right: 0; } }
@@ -330,30 +268,22 @@ h1 {
   .block-3-3 {
     float: left;
     margin-right: 2%;
-    width: 23.5%;
-    local-width: 1;
-    gutter: 0.02;
-    local-columns: 4;
-    results: 1.02; } }
+    width: 23.5%; } }
+.ie8 .block-3-3 {
+  float: left;
+  margin-right: 2%;
+  width: 23.5%; }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-4 {
     float: left;
     margin-right: 4%;
-    width: 100%;
-    local-width: 1;
-    gutter: 0.04;
-    local-columns: 2;
-    results: 1.04; } }
+    width: 100%; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-4 {
     float: left;
     margin-right: 3%;
-    width: 74.25%;
-    local-width: 1;
-    gutter: 0.03;
-    local-columns: 4;
-    results: 1.03; } }
+    width: 74.25%; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-4 {
     margin-right: 0; } }
@@ -361,11 +291,11 @@ h1 {
   .block-4 {
     float: left;
     margin-right: 2%;
-    width: 66%;
-    local-width: 1;
-    gutter: 0.02;
-    local-columns: 6;
-    results: 1.02; } }
+    width: 66%; } }
+.ie8 .block-4 {
+  float: left;
+  margin-right: 2%;
+  width: 66%; }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-5 {
@@ -374,48 +304,32 @@ h1 {
   .block-5 {
     float: left;
     margin-right: 4%;
-    width: 100%;
-    local-width: 1;
-    gutter: 0.04;
-    local-columns: 2;
-    results: 1.04; } }
+    width: 100%; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-5 {
     float: left;
     margin-right: 3%;
-    width: 74.25%;
-    local-width: 1;
-    gutter: 0.03;
-    local-columns: 4;
-    results: 1.03; } }
+    width: 74.25%; } }
 @media all and (min-width: 960px) and (max-width: 99999px) {
   .block-5 {
     float: left;
     margin-right: 2%;
-    width: 66%;
-    local-width: 1;
-    gutter: 0.02;
-    local-columns: 6;
-    results: 1.02; } }
+    width: 66%; } }
+.ie8 .block-5 {
+  float: left;
+  margin-right: 2%;
+  width: 66%; }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-6 {
     float: left;
     margin-right: 4%;
-    width: 100%;
-    local-width: 1;
-    gutter: 0.04;
-    local-columns: 2;
-    results: 1.04; } }
+    width: 100%; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-6 {
     float: left;
     margin-right: 3%;
-    width: 22.75%;
-    local-width: 1;
-    gutter: 0.03;
-    local-columns: 4;
-    results: 1.03; } }
+    width: 22.75%; } }
 @media all and (min-width: 601px) and (max-width: 959px) {
   .block-6 {
     margin-right: 0; } }
@@ -423,21 +337,17 @@ h1 {
   .block-6 {
     float: left;
     margin-right: 2%;
-    width: 66%;
-    local-width: 1;
-    gutter: 0.02;
-    local-columns: 6;
-    results: 1.02; } }
+    width: 66%; } }
+.ie8 .block-6 {
+  float: left;
+  margin-right: 2%;
+  width: 66%; }
 
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-7 {
     float: left;
     margin-right: 4%;
-    width: 100%;
-    local-width: 1;
-    gutter: 0.04;
-    local-columns: 2;
-    results: 1.04; } }
+    width: 100%; } }
 @media all and (min-width: 0px) and (max-width: 600px) {
   .block-7 {
     margin-right: 0; } }
@@ -445,17 +355,13 @@ h1 {
   .block-7 {
     float: left;
     margin-right: 3%;
-    width: 100%;
-    local-width: 1;
-    gutter: 0.03;
-    local-columns: 4;
-    results: 1.03; } }
+    width: 100%; } }
 @media all and (min-width: 960px) and (max-width: 99999px) {
   .block-7 {
     float: left;
     margin-right: 2%;
-    width: 66%;
-    local-width: 1;
-    gutter: 0.02;
-    local-columns: 6;
-    results: 1.02; } }
+    width: 66%; } }
+.ie8 .block-7 {
+  float: left;
+  margin-right: 2%;
+  width: 66%; }
