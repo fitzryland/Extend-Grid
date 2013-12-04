@@ -685,7 +685,7 @@ textarea {
     margin-right: 5.33333%;
     width: 29.77778%; } }
 @media all and (max-width: 600px) and (min-width: 0px) {
-  .block-4, .block-5, .block-6, .block-7, .block-8, .block-9, .block-10, .block-11, .block-12, .block-13, .block-14, .block-15, .block-16, .block-17, .block-18, .block-19, .block-20 {
+  .block-4, .block-5, .block-7, .block-8, .block-9, .block-10, .block-11, .block-12, .block-13, .block-14, .block-15, .block-16, .block-17, .block-18, .block-19, .block-20, .block-21, .block-22 {
     float: left;
     margin-right: 4%;
     width: 22%; } }
@@ -700,7 +700,7 @@ textarea {
     margin-right: 4%;
     width: 48.0%; } }
 @media all and (max-width: 600px) and (min-width: 0px) {
-  .block-3 {
+  .block-3, .block-6 {
     float: left;
     margin-right: 4%;
     width: 74%; } }
@@ -708,7 +708,7 @@ textarea {
   section {
     max-width: 100%; }
 
-  .block-8, .block-12, .block-16 {
+  .block-10, .block-14, .block-18 {
     margin-right: 0; } }
 @media all and (max-width: 959px) and (min-width: 601px) {
   .block-3-1-2 {
@@ -716,7 +716,7 @@ textarea {
     margin-right: 4.8%;
     width: 16.16%; } }
 @media all and (max-width: 959px) and (min-width: 601px) {
-  .block-4, .block-5, .block-6, .block-7, .block-8, .block-9, .block-10, .block-11, .block-12, .block-13, .block-14, .block-15, .block-16, .block-17, .block-18, .block-19, .block-20 {
+  .block-4, .block-7, .block-8, .block-9, .block-10, .block-11, .block-12, .block-13, .block-14, .block-15, .block-16, .block-17, .block-18, .block-19, .block-20, .block-21, .block-22 {
     float: left;
     margin-right: 3%;
     width: 9.875%; } }
@@ -730,6 +730,11 @@ textarea {
     float: left;
     margin-right: 3.42857%;
     width: 26.12245%; } }
+@media all and (max-width: 959px) and (min-width: 601px) {
+  .block-5 {
+    float: left;
+    margin-right: 3%;
+    width: 22.75%; } }
 @media all and (max-width: 959px) and (min-width: 601px) {
   .block-1-1 {
     float: left;
@@ -756,6 +761,11 @@ textarea {
     margin-right: 3%;
     width: 61.375%; } }
 @media all and (max-width: 959px) and (min-width: 601px) {
+  .block-6 {
+    float: left;
+    margin-right: 3%;
+    width: 74.25%; } }
+@media all and (max-width: 959px) and (min-width: 601px) {
   .block-3 {
     float: left;
     margin-right: 3%;
@@ -764,10 +774,10 @@ textarea {
   section {
     max-width: 100%; }
 
-  .block-12 {
+  .block-14 {
     margin-right: 0; } }
 @media all and (max-width: 99999px) and (min-width: 960px) {
-  .block-5, .block-6, .block-7, .block-8, .block-9, .block-10, .block-11, .block-12, .block-13, .block-14, .block-15, .block-16, .block-17, .block-18, .block-19, .block-20 {
+  .block-7, .block-8, .block-9, .block-10, .block-11, .block-12, .block-13, .block-14, .block-15, .block-16, .block-17, .block-18, .block-19, .block-20, .block-21, .block-22 {
     float: left;
     margin-right: 2%;
     width: 4.375%; } }
@@ -807,6 +817,11 @@ textarea {
     margin-right: 2%;
     width: 42.625%; } }
 @media all and (max-width: 99999px) and (min-width: 960px) {
+  .block-5, .block-6 {
+    float: left;
+    margin-right: 2%;
+    width: 49%; } }
+@media all and (max-width: 99999px) and (min-width: 960px) {
   .block-2 {
     float: left;
     margin-right: 2%;
@@ -824,17 +839,17 @@ textarea {
 @media all and (max-width: 99999px) and (min-width: 960px) {
   section {
     max-width: 1200px; } }
-.block-1-2, .block-2, .block-3-1-2, .block-3-2, .block-4, .block-20 {
+.block-1-2, .block-2, .block-3-1-2, .block-3-2, .block-4, .block-6, .block-22 {
   margin-right: 0; }
 
 * {
   box-sizing: border-box; }
 
 html {
-  background-color: #655795; }
+  background-color: #d0d7ff; }
 
 section {
-  background-color: #9f90ff;
+  background-color: rgba(158, 143, 255, 0.6);
   margin: 2em auto 0; }
   section:after {
     content: "";
@@ -844,23 +859,23 @@ section {
 h1 {
   margin: 0; }
 
-.block-1-1, .block-1-2, .block-2, .block-3-1-1, .block-3-1-2, .block-3-2, .block-4, .block-5, .block-6, .block-7, .block-8, .block-9, .block-10, .block-11, .block-12, .block-13, .block-14, .block-15, .block-16, .block-17, .block-18, .block-19, .block-20 {
+.block-1-1, .block-1-2, .block-2, .block-3-1-1, .block-3-1-2, .block-3-2, .block-4, .block-5, .block-6, .block-7, .block-8, .block-9, .block-10, .block-11, .block-12, .block-13, .block-14, .block-15, .block-16, .block-17, .block-18, .block-19, .block-20, .block-21, .block-22 {
   border: 1px solid #655795;
-  background-color: #d3cbff;
+  background-color: #d4ccff;
   float: left;
   min-height: 100px;
   margin-top: 1em;
   padding: 1em; }
 
 .block-1 {
-  background-color: #BAD555; }
+  background-color: rgba(158, 143, 255, 0.6); }
   .block-1:after {
     content: "";
     display: table;
     clear: both; }
 
 .block-3 {
-  background-color: #cb3f44; }
+  background-color: rgba(158, 143, 255, 0.6); }
 
 .block-3-1 {
-  background-color: #be1eb9; }
+  background-color: rgba(158, 143, 255, 0.6); }

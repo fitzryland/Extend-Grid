@@ -7,5 +7,6 @@ The idea is that the grid system is not semantic at all, so it should stay out o
 
 ### TODO
 
+* pretty up example page
 * media queries that go with each layout.
 * IE8 layout fallback with something like .ie8 & { @content; }
