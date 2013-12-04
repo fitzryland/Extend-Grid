@@ -1,11 +1,11 @@
-Flex Grid
+Extend Grid
 ==========
 
-These are my thoughts on a flexible grid system. I am mainly building it just to get a better understanding of it all, but I think this system could work pretty well. I would love some feedback!
+A Sass based grid framework based on extends.
 
-The main idea is to define layouts in a multidimentional Sass list and build a media query and a grid for each layout.
+The idea is that the grid system is not semantic at all, so it should stay out of your HTML. I took an OOCSS approach, but instead of including those classnames in the HTML I made them extends in my Sass.
 
 ### TODO
 
-* Nested grids are up next.
-* fancier, more fine tuned media queries
+* media queries that go with each layout.
+* IE8 layout fallback with something like .ie8 & { @content; }
