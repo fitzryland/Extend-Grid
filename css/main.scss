@@ -111,7 +111,7 @@ $layouts:
 			@for $iii from 1 through $columns {
 				$local-width: 1;
 				$local-columns: $iii;
-				$gutter: nth($layout, 5) * $local-width / 100; // TODO all fucked up!
+				$gutter: (nth($layout, 5) * $local-width / 100) * ($columns / $iii);
 				%#{$layout-name}-cols-#{$ii}-#{$iii} {
 					float: left;
 					margin-right: percentage($gutter);
