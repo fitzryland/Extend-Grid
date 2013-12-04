@@ -10,3 +10,4 @@ The idea is that the grid system is not semantic at all, so it should stay out o
 * pretty up example page
 * media queries that go with each layout.
 * IE8 layout fallback with something like .ie8 & { @content; }
+* need left and right margin to allow for column spacing. aka column shift
