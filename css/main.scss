@@ -31,26 +31,37 @@ $layouts:
 	$width: nth($layout, 4);
 	$gutter: nth($layout, 5)/100;
 	$columns: nth($layout, 6);
-	@media all and (max-width: $max-width) and (min-width: $min-width) {
-		@for $ii from 1 through $columns {
-			// no parent -> TODO does not currently work...
-			%#{$layout-name}-cols-#{$ii} {
-				$local-width: ((($width + $gutter) / $columns) * $ii) - $gutter;
-				width: $local-width;
-				margin-right: percentage($gutter);
-			}
-			// nested
-			@for $iii from 1 through $columns {
-				$local-width: 1;
-				$local-columns: $iii;
-				$gutter: (nth($layout, 5) * $local-width / 100) * ($columns / $iii);
+	$media-query-string: '(max-width: #{$max-width}) and (min-width: #{$min-width})';
+
+	@for $ii from 1 through $columns {
+		// no parent -> TODO does not currently work...
+		// %#{$layout-name}-cols-#{$ii} {
+		// 	$local-width: ((($width + $gutter) / $columns) * $ii) - $gutter;
+		// 	width: $local-width;
+		// 	margin-right: percentage($gutter);
+		// }
+		// nested
+		@for $iii from 1 through $columns {
+			$local-width: 1;
+			$local-columns: $iii;
+			$gutter: (nth($layout, 5) * $local-width / 100) * ($columns / $iii);
+			@media all and #{$media-query-string} {
 				%#{$layout-name}-cols-#{$ii}-#{$iii} {
 					float: left;
 					margin-right: percentage($gutter);
 					width: percentage(((($local-width + $gutter) / $local-columns) * $ii) - $gutter);
 				}
 			}
+			// @if $layout-name == 'large' {
+			// 	.ie8 & {
+			// 		float: left;
+			// 		margin-right: percentage($gutter);
+			// 		width: percentage(((($local-width + $gutter) / $local-columns) * $ii) - $gutter);
+			// 	}
+			// }
 		}
+	}
+	@media all and #{$media-query-string} {
 		%#{$layout-name}-wrap {
 			max-width: $width;
 		}
@@ -61,6 +72,7 @@ $layouts:
 			margin-right: 0;
 		}
 	}
+
 }
 %all-rowend {
 	margin-right: 0;

@@ -678,13 +678,13 @@ textarea {
   .block-1-1, .block-1-2, .block-3-1, .block-3-2, .block-4, .block-5 {
     float: left;
     margin-right: 4%;
-    width: 48.0%; }
-
+    width: 48.0%; } }
+@media all and (max-width: 600px) and (min-width: 0px) {
   .block-1, .block-2, .block-3, .block-6, .block-7 {
     float: left;
     margin-right: 4%;
-    width: 100%; }
-
+    width: 100%; } }
+@media all and (max-width: 600px) and (min-width: 0px) {
   section {
     max-width: 100%; }
 
@@ -694,33 +694,33 @@ textarea {
   .block-3-1, .block-3-2 {
     float: left;
     margin-right: 6%;
-    width: 47%; }
-
+    width: 47%; } }
+@media all and (max-width: 959px) and (min-width: 601px) {
   .block-1-1 {
     float: left;
     margin-right: 4.0%;
-    width: 30.66667%; }
-
+    width: 30.66667%; } }
+@media all and (max-width: 959px) and (min-width: 601px) {
   .block-2, .block-5, .block-7 {
     float: left;
     margin-right: 3%;
-    width: 22.75%; }
-
+    width: 22.75%; } }
+@media all and (max-width: 959px) and (min-width: 601px) {
   .block-1-2 {
     float: left;
     margin-right: 4.0%;
-    width: 65.33333%; }
-
+    width: 65.33333%; } }
+@media all and (max-width: 959px) and (min-width: 601px) {
   .block-3, .block-4, .block-6 {
     float: left;
     margin-right: 3%;
-    width: 48.5%; }
-
+    width: 48.5%; } }
+@media all and (max-width: 959px) and (min-width: 601px) {
   .block-1 {
     float: left;
     margin-right: 3%;
-    width: 74.25%; }
-
+    width: 74.25%; } }
+@media all and (max-width: 959px) and (min-width: 601px) {
   section {
     max-width: 100%; }
 
@@ -730,43 +730,43 @@ textarea {
   .block-1-1 {
     float: left;
     margin-right: 4%;
-    width: 30.66667%; }
-
+    width: 30.66667%; } }
+@media all and (max-width: 99999px) and (min-width: 960px) {
   .block-4 {
     float: left;
     margin-right: 2%;
-    width: 15.0%; }
-
+    width: 15.0%; } }
+@media all and (max-width: 99999px) and (min-width: 960px) {
   .block-1-2 {
     float: left;
     margin-right: 4%;
-    width: 65.33333%; }
-
+    width: 65.33333%; } }
+@media all and (max-width: 99999px) and (min-width: 960px) {
   .block-3-1 {
     float: left;
     margin-right: 2.4%;
-    width: 38.56%; }
-
+    width: 38.56%; } }
+@media all and (max-width: 99999px) and (min-width: 960px) {
   .block-5, .block-6, .block-7 {
     float: left;
     margin-right: 2%;
-    width: 32%; }
-
+    width: 32%; } }
+@media all and (max-width: 99999px) and (min-width: 960px) {
   .block-3-2 {
     float: left;
     margin-right: 2.4%;
-    width: 59.04%; }
-
+    width: 59.04%; } }
+@media all and (max-width: 99999px) and (min-width: 960px) {
   .block-1, .block-2 {
     float: left;
     margin-right: 2%;
-    width: 49%; }
-
+    width: 49%; } }
+@media all and (max-width: 99999px) and (min-width: 960px) {
   .block-3 {
     float: left;
     margin-right: 2%;
-    width: 83%; }
-
+    width: 83%; } }
+@media all and (max-width: 99999px) and (min-width: 960px) {
   section {
     max-width: 1200px; }
 
