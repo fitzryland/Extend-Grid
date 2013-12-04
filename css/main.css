@@ -1,29 +1,69 @@
 @media all and (max-width: 600px) and (min-width: 0px) {
   .block1, .block2, .block4, .block5, .block7 {
-    width: 48%;
+    width: 49.98%;
     margin-right: 4%; }
+
+  .block-1-1, .block-1-2, .block-3-1, .block-3-2, .block-4, .block-5 {
+    float: left;
+    margin-right: 4%;
+    width: 48.0%; }
 
   .block3, .block6 {
     width: 100%;
     margin-right: 4%; }
 
+  .block-1, .block-2, .block-3, .block-6, .block-7 {
+    float: left;
+    margin-right: 4%;
+    width: 100%; }
+
   section {
     max-width: 100%; }
 
-  .block2, .block3, .block5 {
+  .block2, .block3, .block5, .block-1, .block-1-2, .block-5 {
     margin-right: 0; } }
 @media all and (max-width: 959px) and (min-width: 601px) {
   .block1, .block2, .block5 {
-    width: 22.75%;
+    width: 24.9775%;
     margin-right: 3%; }
+
+  .block-3-1, .block-3-2 {
+    float: left;
+    margin-right: 3%;
+    width: 48.5%; }
+
+  .block-1-1 {
+    float: left;
+    margin-right: 3%;
+    width: 31.33333%; }
+
+  .block-2, .block-5, .block-7 {
+    float: left;
+    margin-right: 3%;
+    width: 22.75%; }
 
   .block3, .block6, .block7 {
-    width: 48.5%;
+    width: 49.985%;
     margin-right: 3%; }
 
+  .block-1-2 {
+    float: left;
+    margin-right: 3%;
+    width: 65.66667%; }
+
+  .block-3, .block-4, .block-6 {
+    float: left;
+    margin-right: 3%;
+    width: 48.5%; }
+
   .block4 {
-    width: 74.25%;
+    width: 74.9925%;
     margin-right: 3%; }
+
+  .block-1 {
+    float: left;
+    margin-right: 3%;
+    width: 74.25%; }
 
   section {
     max-width: 100%; }
@@ -31,26 +71,69 @@
   .block4, .block6 {
     clear: both; }
 
-  .block3, .block5, .block7 {
+  .block3, .block5, .block7, .block-1-2, .block-4 {
     margin-right: 0; } }
 @media all and (max-width: 99999px) and (min-width: 960px) {
   .block3, .block4, .block6 {
-    width: 15%;
+    width: 199.98333px;
     margin-right: 2%; }
+
+  .block-1-1 {
+    float: left;
+    margin-right: 2%;
+    width: 32%; }
+
+  .block-4 {
+    float: left;
+    margin-right: 2%;
+    width: 15.0%; }
 
   .block1, .block2, .block7 {
-    width: 32%;
+    width: 399.98667px;
     margin-right: 2%; }
 
+  .block-1-2 {
+    float: left;
+    margin-right: 2%;
+    width: 66%; }
+
+  .block-3-1 {
+    float: left;
+    margin-right: 2%;
+    width: 38.8%; }
+
+  .block-5, .block-6, .block-7 {
+    float: left;
+    margin-right: 2%;
+    width: 32%; }
+
   .block5 {
-    width: 49%;
+    width: 599.99px;
     margin-right: 2%; }
+
+  .block-3-2 {
+    float: left;
+    margin-right: 2%;
+    width: 59.2%; }
+
+  .block-1, .block-2 {
+    float: left;
+    margin-right: 2%;
+    width: 49%; }
+
+  .block-3 {
+    float: left;
+    margin-right: 2%;
+    width: 83%; }
 
   section {
     max-width: 1200px; }
 
-  .block4, .block7 {
+  .block4, .block7, .block-1-2, .block-4 {
     margin-right: 0; } }
+.block-2, .block-3-2, .block-7 {
+  margin-right: 0; }
+
 * {
   box-sizing: border-box; }
 
@@ -68,7 +151,7 @@ section {
 h1 {
   margin: 0; }
 
-.block1, .block2, .block3, .block4, .block5, .block6, .block7, .block-1-1, .block-1-2, .block-2, .block-3-1, .block-3-2, .block-3-3, .block-4, .block-5, .block-6, .block-7 {
+.block1, .block2, .block3, .block4, .block5, .block6, .block7, .block-1-1, .block-1-2, .block-2, .block-3-1, .block-3-2, .block-4, .block-5, .block-6, .block-7 {
   border: 1px solid #655795;
   background-color: #d3cbff;
   float: left;
@@ -101,267 +184,6 @@ h1 {
     content: "";
     display: table;
     clear: both; }
-  @media all and (min-width: 0px) and (max-width: 600px) {
-    .block-1 {
-      float: left;
-      margin-right: 4%;
-      width: 100%; } }
-  @media all and (min-width: 601px) and (max-width: 959px) {
-    .block-1 {
-      float: left;
-      margin-right: 3%;
-      width: 74.25%; } }
-  @media all and (min-width: 960px) and (max-width: 99999px) {
-    .block-1 {
-      float: left;
-      margin-right: 2%;
-      width: 66%; } }
-  .ie8 .block-1 {
-    float: left;
-    margin-right: 2%;
-    width: 66%; }
-
-@media all and (min-width: 0px) and (max-width: 600px) {
-  .block-1-1 {
-    float: left;
-    margin-right: 4%;
-    width: 48.0%; } }
-@media all and (min-width: 601px) and (max-width: 959px) {
-  .block-1-1 {
-    float: left;
-    margin-right: 3%;
-    width: 31.33333%; } }
-@media all and (min-width: 960px) and (max-width: 99999px) {
-  .block-1-1 {
-    float: left;
-    margin-right: 2%;
-    width: 23.5%; } }
-.ie8 .block-1-1 {
-  float: left;
-  margin-right: 2%;
-  width: 23.5%; }
-
-@media all and (min-width: 0px) and (max-width: 600px) {
-  .block-1-2 {
-    float: left;
-    margin-right: 4%;
-    width: 48.0%; } }
-@media all and (min-width: 601px) and (max-width: 959px) {
-  .block-1-2 {
-    float: left;
-    margin-right: 3%;
-    width: 65.66667%; } }
-@media all and (min-width: 960px) and (max-width: 99999px) {
-  .block-1-2 {
-    float: left;
-    margin-right: 2%;
-    width: 23.5%; } }
-.ie8 .block-1-2 {
-  float: left;
-  margin-right: 2%;
-  width: 23.5%; }
-.block-1 .block-1-2 {
-  margin-right: 0; }
-
-@media all and (min-width: 0px) and (max-width: 600px) {
-  .block-2 {
-    float: left;
-    margin-right: 4%;
-    width: 48.0%; } }
-@media all and (min-width: 601px) and (max-width: 959px) {
-  .block-2 {
-    float: left;
-    margin-right: 3%;
-    width: 22.75%; } }
-@media all and (min-width: 601px) and (max-width: 959px) {
-  .block-2 {
-    margin-right: 0; } }
-@media all and (min-width: 960px) and (max-width: 99999px) {
-  .block-2 {
-    float: left;
-    margin-right: 2%;
-    width: 15.0%; } }
-.ie8 .block-2 {
-  float: left;
-  margin-right: 2%;
-  width: 15.0%; }
 
 .block-3 {
-  background-color: #BAD555; }
-  @media all and (min-width: 0px) and (max-width: 600px) {
-    .block-3 {
-      float: left;
-      margin-right: 4%;
-      width: 48.0%; } }
-  @media all and (min-width: 0px) and (max-width: 600px) {
-    .block-3 {
-      margin-right: 0; } }
-  @media all and (min-width: 601px) and (max-width: 959px) {
-    .block-3 {
-      float: left;
-      margin-right: 3%;
-      width: 100%; } }
-  @media all and (min-width: 960px) and (max-width: 99999px) {
-    .block-3 {
-      float: left;
-      margin-right: 2%;
-      width: 66%; } }
-  .ie8 .block-3 {
-    float: left;
-    margin-right: 2%;
-    width: 66%; }
-
-@media all and (min-width: 0px) and (max-width: 600px) {
-  .block-3-1 {
-    float: left;
-    margin-right: 4%;
-    width: 100%; } }
-@media all and (min-width: 601px) and (max-width: 959px) {
-  .block-3-1 {
-    float: left;
-    margin-right: 3%;
-    width: 22.75%; } }
-@media all and (min-width: 960px) and (max-width: 99999px) {
-  .block-3-1 {
-    float: left;
-    margin-right: 2%;
-    width: 23.5%; } }
-.ie8 .block-3-1 {
-  float: left;
-  margin-right: 2%;
-  width: 23.5%; }
-
-@media all and (min-width: 0px) and (max-width: 600px) {
-  .block-3-2 {
-    float: left;
-    margin-right: 4%;
-    width: 100%; } }
-@media all and (min-width: 601px) and (max-width: 959px) {
-  .block-3-2 {
-    float: left;
-    margin-right: 3%;
-    width: 22.75%; } }
-@media all and (min-width: 960px) and (max-width: 99999px) {
-  .block-3-2 {
-    float: left;
-    margin-right: 2%;
-    width: 23.5%; } }
-.ie8 .block-3-2 {
-  float: left;
-  margin-right: 2%;
-  width: 23.5%; }
-
-@media all and (min-width: 0px) and (max-width: 600px) {
-  .block-3-3 {
-    float: left;
-    margin-right: 4%;
-    width: 100%; } }
-@media all and (min-width: 601px) and (max-width: 959px) {
-  .block-3-3 {
-    float: left;
-    margin-right: 3%;
-    width: 48.5%; } }
-@media all and (min-width: 601px) and (max-width: 959px) {
-  .block-3-3 {
-    margin-right: 0; } }
-@media all and (min-width: 960px) and (max-width: 99999px) {
-  .block-3-3 {
-    float: left;
-    margin-right: 2%;
-    width: 23.5%; } }
-.ie8 .block-3-3 {
-  float: left;
-  margin-right: 2%;
-  width: 23.5%; }
-
-@media all and (min-width: 0px) and (max-width: 600px) {
-  .block-4 {
-    float: left;
-    margin-right: 4%;
-    width: 100%; } }
-@media all and (min-width: 601px) and (max-width: 959px) {
-  .block-4 {
-    float: left;
-    margin-right: 3%;
-    width: 74.25%; } }
-@media all and (min-width: 601px) and (max-width: 959px) {
-  .block-4 {
-    margin-right: 0; } }
-@media all and (min-width: 960px) and (max-width: 99999px) {
-  .block-4 {
-    float: left;
-    margin-right: 2%;
-    width: 66%; } }
-.ie8 .block-4 {
-  float: left;
-  margin-right: 2%;
-  width: 66%; }
-
-@media all and (min-width: 0px) and (max-width: 600px) {
-  .block-5 {
-    margin-right: 0; } }
-@media all and (min-width: 0px) and (max-width: 600px) {
-  .block-5 {
-    float: left;
-    margin-right: 4%;
-    width: 100%; } }
-@media all and (min-width: 601px) and (max-width: 959px) {
-  .block-5 {
-    float: left;
-    margin-right: 3%;
-    width: 74.25%; } }
-@media all and (min-width: 960px) and (max-width: 99999px) {
-  .block-5 {
-    float: left;
-    margin-right: 2%;
-    width: 66%; } }
-.ie8 .block-5 {
-  float: left;
-  margin-right: 2%;
-  width: 66%; }
-
-@media all and (min-width: 0px) and (max-width: 600px) {
-  .block-6 {
-    float: left;
-    margin-right: 4%;
-    width: 100%; } }
-@media all and (min-width: 601px) and (max-width: 959px) {
-  .block-6 {
-    float: left;
-    margin-right: 3%;
-    width: 22.75%; } }
-@media all and (min-width: 601px) and (max-width: 959px) {
-  .block-6 {
-    margin-right: 0; } }
-@media all and (min-width: 960px) and (max-width: 99999px) {
-  .block-6 {
-    float: left;
-    margin-right: 2%;
-    width: 66%; } }
-.ie8 .block-6 {
-  float: left;
-  margin-right: 2%;
-  width: 66%; }
-
-@media all and (min-width: 0px) and (max-width: 600px) {
-  .block-7 {
-    float: left;
-    margin-right: 4%;
-    width: 100%; } }
-@media all and (min-width: 0px) and (max-width: 600px) {
-  .block-7 {
-    margin-right: 0; } }
-@media all and (min-width: 601px) and (max-width: 959px) {
-  .block-7 {
-    float: left;
-    margin-right: 3%;
-    width: 100%; } }
-@media all and (min-width: 960px) and (max-width: 99999px) {
-  .block-7 {
-    float: left;
-    margin-right: 2%;
-    width: 66%; } }
-.ie8 .block-7 {
-  float: left;
-  margin-right: 2%;
-  width: 66%; }
+  background-color: #cb3f44; }
