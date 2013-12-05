@@ -29,6 +29,18 @@ $layouts:
 	(medium-andup, 601px, 99999px, 100%, 3, 8) // really not ideal way to add a media query
 	(large, 960px, 99999px, 1200px, 2, 16); // 'large' is special name that is default for IE8
 
+// add a media query for each layout
+@mixin break($media) {
+	@each $layout in $layouts {
+		@if nth($layout, 1) == $media {
+			@media all and
+				(min-width: nth($layout, 2)) and
+				(max-width: nth($layout, 3))
+				{ @content; }
+		}
+	}
+}
+
 // Extendable Flexible Grid
 @each $layout in $layouts {
 	$layout-name: nth($layout, 1);
