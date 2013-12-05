@@ -695,7 +695,7 @@ textarea {
     margin-right: 5.33333%;
     width: 64.88889%; } }
 @media all and (max-width: 600px) and (min-width: 0px) {
-  .block-1, .block-2 {
+  .feature, .block-1, .block-2 {
     float: left;
     margin-right: 4%;
     width: 48.0%; } }
@@ -705,7 +705,7 @@ textarea {
     margin-right: 4%;
     width: 74%; } }
 @media all and (max-width: 600px) and (min-width: 0px) {
-  .title {
+  .section-title, .title {
     float: left;
     margin-right: 4%;
     width: 100%; } }
@@ -713,7 +713,7 @@ textarea {
   .wrap {
     max-width: 100%; }
 
-  .title, .block-10, .block-14, .block-18 {
+  .section-title, .title, .block-10, .block-14, .block-18 {
     margin-right: 0; } }
 @media all and (max-width: 959px) and (min-width: 601px) {
   .block-3-1-2 {
@@ -756,7 +756,7 @@ textarea {
     margin-right: 4.8%;
     width: 79.04%; } }
 @media all and (max-width: 959px) and (min-width: 601px) {
-  .title {
+  .section-title, .title, .feature {
     float: left;
     margin-right: 3%;
     width: 48.5%; } }
@@ -781,11 +781,11 @@ textarea {
     margin-right: 3%;
     width: 87.125%; } }
 @media all and (max-width: 959px) and (min-width: 601px) {
-  .title {
+  .section-title, .title {
     margin-left: 25.75%;
     shift: shift; }
 
-  .title {
+  .section-title, .title {
     margin-right: 28.75%;
     clear: clear; } }
 @media all and (max-width: 959px) and (min-width: 601px) {
@@ -885,11 +885,11 @@ textarea {
   width: 42.625%; }
 
 @media all and (max-width: 99999px) and (min-width: 960px) {
-  .block-5, .block-6 {
+  .section-title, .feature, .block-5, .block-6 {
     float: left;
     margin-right: 2%;
     width: 49%; } }
-.ie8 .block-5, .ie8 .block-6 {
+.ie8 .section-title, .ie8 .feature, .ie8 .block-5, .ie8 .block-6 {
   float: left;
   margin-right: 2%;
   width: 49%; }
@@ -933,18 +933,26 @@ textarea {
     margin-right: 14.75%;
     clear: clear; } }
 @media all and (max-width: 99999px) and (min-width: 960px) {
+  .section-title {
+    margin-left: 25.5%;
+    shift: shift; }
+
+  .section-title {
+    margin-right: 27.5%;
+    clear: clear; } }
+@media all and (max-width: 99999px) and (min-width: 960px) {
   .wrap {
     max-width: 1200px; } }
-.feature-block:last-child, .block-1-2, .block-2, .block-3-1-2, .block-3-2, .block-4, .block-6, .block-22 {
+.feature-block:last-child, .feature:nth-child(odd), .block-1-2, .block-2, .block-3-1-2, .block-3-2, .block-4, .block-6, .block-22 {
   margin-right: 0; }
 
-.title, .feature-block, .block-1-1, .block-1-2, .block-2, .block-3-1-1, .block-3-1-2, .block-3-2, .block-4, .block-5, .block-6, .block-7, .block-8, .block-9, .block-10, .block-11, .block-12, .block-13, .block-14, .block-15, .block-16, .block-17, .block-18, .block-19, .block-20, .block-21, .block-22 {
+.section-title, .title, .feature-block, .feature, .block-1-1, .block-1-2, .block-2, .block-3-1-1, .block-3-1-2, .block-3-2, .block-4, .block-5, .block-6, .block-7, .block-8, .block-9, .block-10, .block-11, .block-12, .block-13, .block-14, .block-15, .block-16, .block-17, .block-18, .block-19, .block-20, .block-21, .block-22 {
   border: 1px solid #655795;
   background-color: #d4ccff;
   float: left;
   min-height: 100px;
-  margin-top: 1em;
-  padding: 1em; }
+  margin-top: 1rem;
+  padding: 1rem; }
 
 * {
   box-sizing: border-box; }
@@ -959,8 +967,13 @@ html {
     display: table;
     clear: both; }
 
+.section-title {
+  text-align: center; }
+
 section {
-  background-color: rgba(158, 143, 255, 0.6); }
+  background-color: rgba(158, 143, 255, 0.6);
+  margin-bottom: 1em;
+  padding-bottom: 1em; }
   section:after {
     content: "";
     display: table;
