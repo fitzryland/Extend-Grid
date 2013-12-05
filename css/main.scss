@@ -86,7 +86,7 @@ $layouts:
 					shift: shift;
 				}
 				%#{$layout-name}-clear-#{$ii}-#{$iii} {
-					margin-right: percentage((($local-width + $gutter) / $local-columns) * $ii);
+					margin-right: percentage(((($local-width + $gutter) / $local-columns) * $ii) + $gutter);
 					clear: clear;
 				}
 			}
@@ -133,7 +133,7 @@ html {
 	@extend %small-wrap;
 	@extend %medium-wrap;
 	@extend %large-wrap;
-	margin: 2em auto 0;
+	margin: 0 auto;
 	@include group();
 }
 section {
@@ -144,13 +144,23 @@ h1 {
 	margin: 0;
 }
 header {
+	margin-bottom: 1em;
 	@include group();
 }
 .title {
 	@extend %block;
 	@extend %small-cols-4-4, %small-rowend;
 	@extend %medium-cols-4-8, %medium-shift-2-8, %medium-clear-2-8;
-	@extend %large-cols-4-16;
+	@extend %large-cols-4-16, %large-shift-2-16, %large-clear-2-16;
+}
+.feature-block {
+	@extend %block;
+	@extend %small-cols-1-4;
+	@extend %medium-cols-2-8;
+	@extend %large-cols-2-16;
+	&:last-child {
+		@extend %all-rowend;
+	}
 }
 
 .block-1 {
