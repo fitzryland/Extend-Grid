@@ -92,6 +92,8 @@ $layouts:
 			}
 		}
 	}
+
+
 	@media all and #{$media-query-string} {
 		%#{$layout-name}-wrap {
 			max-width: $width;
