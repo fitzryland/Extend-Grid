@@ -8,5 +8,5 @@ The idea is that the grid system is not semantic at all, so it should stay out o
 ### TODO
 
 * pretty up example page
-* IE8 layout fallback with something like .ie8 & { @content; }
+* IE8 layout fallback still doesn't work... could be modernizer...
 * need left and right margin to allow for column spacing. aka column shift
