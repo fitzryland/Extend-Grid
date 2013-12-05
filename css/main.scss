@@ -55,13 +55,6 @@ $layouts:
 	$media-query-string: '(max-width: #{$max-width}) and (min-width: #{$min-width})';
 
 	@for $ii from 1 through $columns {
-		// no parent -> TODO does not currently work...
-		// %#{$layout-name}-cols-#{$ii} {
-		// 	$local-width: ((($width + $gutter) / $columns) * $ii) - $gutter;
-		// 	width: $local-width;
-		// 	margin-right: percentage($gutter);
-		// }
-		// nested
 		@for $iii from 1 through $columns {
 			$local-width: 1;
 			$local-columns: $iii;
@@ -78,6 +71,23 @@ $layouts:
 					float: left;
 					margin-right: percentage($gutter);
 					width: percentage(((($local-width + $gutter) / $local-columns) * $ii) - $gutter);
+				}
+			}
+		}
+	}
+	@for $ii from 1 through $columns {
+		@for $iii from 1 through $columns {
+			$local-width: 1;
+			$local-columns: $iii;
+			$gutter: (nth($layout, 5) * $local-width / 100) * ($columns / $iii);
+			@media all and #{$media-query-string} {
+				%#{$layout-name}-shift-#{$ii}-#{$iii} {
+					margin-left: percentage((($local-width + $gutter) / $local-columns) * $ii);
+					shift: shift;
+				}
+				%#{$layout-name}-clear-#{$ii}-#{$iii} {
+					margin-right: percentage((($local-width + $gutter) / $local-columns) * $ii);
+					clear: clear;
 				}
 			}
 		}
@@ -101,24 +111,7 @@ $layouts:
 // END GRID STUFF
 
 
-* {
-	box-sizing: border-box;
-}
-html {
-	background-color: $background-color;
-}
 
-section {
-	@extend %small-wrap;
-	@extend %medium-wrap;
-	@extend %large-wrap;
-	background-color: $group-color;
-	margin: 2em auto 0;
-	@include group();
-}
-h1 {
-	margin: 0;
-}
 %block {
 	border: 1px solid $block-border-color;
 	background-color: $block-color;
@@ -126,6 +119,36 @@ h1 {
 	min-height: 100px;
 	margin-top: 1em;
 	padding: 1em;
+}
+
+* {
+	box-sizing: border-box;
+}
+html {
+	background-color: $background-color;
+}
+.wrap {
+	@extend %small-wrap;
+	@extend %medium-wrap;
+	@extend %large-wrap;
+	margin: 2em auto 0;
+	@include group();
+}
+section {
+	background-color: $group-color;
+	@include group();
+}
+h1 {
+	margin: 0;
+}
+header {
+	@include group();
+}
+.title {
+	@extend %block;
+	@extend %small-cols-4-4, %small-rowend;
+	@extend %medium-cols-4-8, %medium-shift-2-8, %medium-clear-2-8;
+	@extend %large-cols-4-16;
 }
 
 .block-1 {

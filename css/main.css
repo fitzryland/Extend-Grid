@@ -705,10 +705,15 @@ textarea {
     margin-right: 4%;
     width: 74%; } }
 @media all and (max-width: 600px) and (min-width: 0px) {
-  section {
+  .title {
+    float: left;
+    margin-right: 4%;
+    width: 100%; } }
+@media all and (max-width: 600px) and (min-width: 0px) {
+  .wrap {
     max-width: 100%; }
 
-  .block-10, .block-14, .block-18 {
+  .title, .block-10, .block-14, .block-18 {
     margin-right: 0; } }
 @media all and (max-width: 959px) and (min-width: 601px) {
   .block-3-1-2 {
@@ -751,6 +756,11 @@ textarea {
     margin-right: 4.8%;
     width: 79.04%; } }
 @media all and (max-width: 959px) and (min-width: 601px) {
+  .title {
+    float: left;
+    margin-right: 3%;
+    width: 48.5%; } }
+@media all and (max-width: 959px) and (min-width: 601px) {
   .block-3-1 {
     float: left;
     margin-right: 3.42857%;
@@ -771,7 +781,15 @@ textarea {
     margin-right: 3%;
     width: 87.125%; } }
 @media all and (max-width: 959px) and (min-width: 601px) {
-  section {
+  .title {
+    margin-left: 25.75%;
+    shift: shift; }
+
+  .title {
+    margin-right: 25.75%;
+    clear: clear; } }
+@media all and (max-width: 959px) and (min-width: 601px) {
+  .wrap {
     max-width: 100%; }
 
   .block-14 {
@@ -827,11 +845,11 @@ textarea {
   width: 38.08%; }
 
 @media all and (max-width: 99999px) and (min-width: 960px) {
-  .block-4 {
+  .title, .block-4 {
     float: left;
     margin-right: 2%;
     width: 23.5%; } }
-.ie8 .block-4 {
+.ie8 .title, .ie8 .block-4 {
   float: left;
   margin-right: 2%;
   width: 23.5%; }
@@ -897,10 +915,18 @@ textarea {
   width: 74.5%; }
 
 @media all and (max-width: 99999px) and (min-width: 960px) {
-  section {
+  .wrap {
     max-width: 1200px; } }
 .block-1-2, .block-2, .block-3-1-2, .block-3-2, .block-4, .block-6, .block-22 {
   margin-right: 0; }
+
+.title, .block-1-1, .block-1-2, .block-2, .block-3-1-1, .block-3-1-2, .block-3-2, .block-4, .block-5, .block-6, .block-7, .block-8, .block-9, .block-10, .block-11, .block-12, .block-13, .block-14, .block-15, .block-16, .block-17, .block-18, .block-19, .block-20, .block-21, .block-22 {
+  border: 1px solid #655795;
+  background-color: #d4ccff;
+  float: left;
+  min-height: 100px;
+  margin-top: 1em;
+  padding: 1em; }
 
 * {
   box-sizing: border-box; }
@@ -908,9 +934,15 @@ textarea {
 html {
   background-color: #d0d7ff; }
 
-section {
-  background-color: rgba(158, 143, 255, 0.6);
+.wrap {
   margin: 2em auto 0; }
+  .wrap:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+section {
+  background-color: rgba(158, 143, 255, 0.6); }
   section:after {
     content: "";
     display: table;
@@ -919,13 +951,10 @@ section {
 h1 {
   margin: 0; }
 
-.block-1-1, .block-1-2, .block-2, .block-3-1-1, .block-3-1-2, .block-3-2, .block-4, .block-5, .block-6, .block-7, .block-8, .block-9, .block-10, .block-11, .block-12, .block-13, .block-14, .block-15, .block-16, .block-17, .block-18, .block-19, .block-20, .block-21, .block-22 {
-  border: 1px solid #655795;
-  background-color: #d4ccff;
-  float: left;
-  min-height: 100px;
-  margin-top: 1em;
-  padding: 1em; }
+header:after {
+  content: "";
+  display: table;
+  clear: both; }
 
 .block-1 {
   background-color: rgba(158, 143, 255, 0.6); }
