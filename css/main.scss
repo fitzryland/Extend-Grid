@@ -38,6 +38,9 @@ $layouts:
 				(max-width: nth($layout, 3))
 				{ @content; }
 		}
+		@if $media == 'large' {
+			.ie8 & { @content; }
+		}
 	}
 }
 
@@ -70,13 +73,13 @@ $layouts:
 					width: percentage(((($local-width + $gutter) / $local-columns) * $ii) - $gutter);
 				}
 			}
-			// @if $layout-name == 'large' {
-			// 	.ie8 & {
-			// 		float: left;
-			// 		margin-right: percentage($gutter);
-			// 		width: percentage(((($local-width + $gutter) / $local-columns) * $ii) - $gutter);
-			// 	}
-			// }
+			@if $layout-name == 'large' {
+				.ie8 %#{$layout-name}-cols-#{$ii}-#{$iii} {
+					float: left;
+					margin-right: percentage($gutter);
+					width: percentage(((($local-width + $gutter) / $local-columns) * $ii) - $gutter);
+				}
+			}
 		}
 	}
 	@media all and #{$media-query-string} {
