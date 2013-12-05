@@ -9,4 +9,3 @@ The idea is that the grid system is not semantic at all, so it should stay out o
 
 * pretty up example page
 * IE8 layout fallback doesn't really work... needs work.
-* need left and right margin to allow for column spacing. aka column shift

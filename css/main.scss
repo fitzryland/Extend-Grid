@@ -160,25 +160,20 @@ header {
 	@extend %block;
 	@extend %small-cols-4-4, %small-rowend;
 	@extend %medium-cols-4-8, %medium-shift-2-8, %medium-clear-2-8;
-	@extend %large-cols-4-16, %large-shift-2-16, %large-clear-2-16;
+	@extend %large-cols-8-16, %large-shift-4-16, %large-clear-4-16;
 }
 .feature-block {
 	@extend %block;
 	@extend %small-cols-1-4;
 	@extend %medium-cols-2-8;
-	@extend %large-cols-2-16;
+	@extend %large-cols-4-16;
 	&:last-child {
 		@extend %all-rowend;
 	}
 }
-.feature {
-	@extend %block;
-	@extend %small-cols-2-4;
-	@extend %medium-cols-4-8;
-	@extend %large-cols-8-16;
-	&:nth-child(odd) {
-		@extend %all-rowend;
-	}
+code {
+	font-size: 0.8em;
+	white-space: pre;
 }
 .block-1 {
 	@extend %small-cols-2-4;
